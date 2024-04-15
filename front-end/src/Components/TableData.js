@@ -19,30 +19,49 @@ const TableData = () => {
                     <div className="col-md-12">
                     <h5 className="mt-2">CASE LIST</h5>
                        <div className="d-grid d-md-flex justify-content-md-end mb-3">
-                        <Link to="/caseform" className="btn btn-warning">Add New Case</Link>
+                        {/* <Link to="/caseform" className="btn btn-warning">Add New Case</Link> */}
                        </div>
                        <table className="table table-bordered table-striped">
                         <thead>
                         <tr>
-                        <th>Booking ID</th>
-                        <th>Customer Code</th>
-                        <th>Account Name</th>
-                        <th>Case Owner</th>
-                        <th>Case Number</th>
-                        <th>Booking Status</th>
-                        <th>Shipment Status</th>
+                        <th>booking_number</th>
+                        <th>account_code</th>
+                        <th>po_number</th>
+                        <th>subject</th>
+                        <th>description</th>
+                        <th>case_owner</th>
+                        <th>case_number</th>
+                        <th>category</th>
+                        <th>sub_category</th>
+                        <th>priority</th>
+                        <th>customer_code</th>
+                        <th>account_name</th>
+                        <th>customer_contact_name</th>
+                        <th>customer_contact_email</th>
+                        <th>customer_contact_title</th>
+                        {/* <th>case_id</th> */}
+
                         </tr>
                         </thead>
                         <tbody>
                          { data.map( data =>{
                             return <tr>
-                                <td>{data.booking_id}</td>
-                                <td>{data.customer_code}</td>
-                                <td>{data.account_name}</td>
+                                <td>{data.booking_number}</td>
+                                <td>{data.account_code}</td>
+                                <td>{data.po_number}</td>
+                                <td>{data.subject}</td>
+                                <td>{data.description}</td>
                                 <td>{data.case_owner}</td>
                                 <td>{data.case_number}</td>
-                                <td>{data.booking_status}</td>
-                                <td>{data.shipment_status}</td>
+                                <td>{data.category}</td>
+                                <td>{data.sub_category}</td>
+                                <td>{data.priority}</td>
+                                <td>{data.customer_code}</td>
+                                <td>{data.account_name}</td>
+                                <td>{data.customer_contact_name}</td>
+                                <td>{data.customer_contact_email}</td>
+                                <td>{data.customer_contact_title}</td>
+                                {/* <td>{data.case_id}</td> */}
                             </tr>
                             })
                             }                        
