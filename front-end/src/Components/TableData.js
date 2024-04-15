@@ -2,18 +2,6 @@ import React,{ useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
-// function tabledata()
-// {
-//     const [tabledata, settabledata]= useState([]); 
-//     useEffect( ()=>{
-//         const gettabledata= async()=>{
-//             const reqData= await fetch("http://localhost:5000/api/user");
-//             const resData= await reqData.json();
-//             settabledata(resData);
-//            // console.log(resData);
-//         }
-//         gettabledata();
-//     },[]);
 
 const TableData = () => {
     const [data, setData] = useState([]);
