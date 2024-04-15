@@ -2,11 +2,11 @@ import React ,{  } from "react";
 import {Routes, Route} from 'react-router-dom';
 import Header from './Components/Common/Header';
 import Home from './Components/Home';
-import Userdata from './Components/Userdata';
+import TableData from './Components/TableData';
 import Adduser from "./Components/Adduser";
 import Edituser from "./Components/Edituser";
 import ExportCsv from "./Components/Exportcsv";
-import Enablebutton from "./Components/Enablebutton";
+import Caseform from "./Components/CaseForm";
 import Addmoreinput from "./Components/Addmoreinput";
 
 
@@ -21,12 +21,12 @@ function App()
      <div className='rightPanel'>
       <Routes>
       <Route path='/' element={<Home/>} /> 
-      <Route path='/userdata' element={<Userdata/>} />  
-      <Route path='/adduser' element={<Adduser/>} />  
-      <Route path='/edituser/:id' element={<Edituser/>} /> 
-      <Route path='/exportcsv' element={<ExportCsv/>} /> 
-      <Route path='/enablebutton' element={<Enablebutton/>} /> 
-      <Route path='/addmoreinput' element={<Addmoreinput/>} /> 
+      <Route path='/tabledata' element={<TableData/>} />  
+      {/* <Route path='/adduser' element={<Adduser/>} />   */}
+      {/* <Route path='/edituser/:id' element={<Edituser/>} />  */}
+      {/* <Route path='/exportcsv' element={<ExportCsv/>} />  */}
+      <Route path='/caseform' element={<Caseform/>} /> 
+      {/* <Route path='/addmoreinput' element={<Addmoreinput/>} />  */}
     
      
           

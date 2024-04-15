@@ -24,7 +24,7 @@ function Adduser()
       {
         setMessage(resjson.success);
         setTimeout(()=>{
-            navigate('/userdata');
+            navigate('/tabledata');
         }, 2000);
 
       } else{

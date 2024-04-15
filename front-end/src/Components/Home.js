@@ -7,7 +7,7 @@ function Home()
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                    <h5 className="mt-2">Welcome to React Practical 2</h5>
+                    <h5 className="mt-2">CRM Demo Simulation V1</h5>
                     </div>
                 </div>
             </div>

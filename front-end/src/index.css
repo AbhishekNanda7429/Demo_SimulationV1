@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-.leftPanel{ width: 20%; float: left; min-height: 990px; background-color: darkorange; color: #fff;}
+.leftPanel{ width: 15%; float: left; min-height: 990px; background-color: darkorange; color: #fff;}
 .nav-link{ color: #fff; padding: 0px;}
 .nav-link:hover{ color: #000;}
 
