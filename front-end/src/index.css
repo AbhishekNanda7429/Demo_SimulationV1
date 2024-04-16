@@ -17,3 +17,16 @@ code {
 .nav-link:hover{ color: #000;}
 
 .rightPanel{ width:80%; float: left;}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* You can also style the SVG directly using CSS */
+.home svg {
+  width: 200px;
+  height: 200px;
+}
