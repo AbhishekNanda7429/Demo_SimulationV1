@@ -26,6 +26,6 @@ const dataSchema = new mongoose.Schema({
   case_id:String
 });
 
-const DataModel = mongoose.model('finaldb', dataSchema);
+const DataModel = mongoose.model('finaldbs', dataSchema);
 
 module.exports = DataModel;

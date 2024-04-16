@@ -30,16 +30,16 @@ const TableData = () => {
                         <th>subject</th>
                         <th>description</th>
                         <th>case_owner</th>
-                        <th>case_number</th>
+                        {/* <th>case_number</th> */}
                         <th>category</th>
                         <th>sub_category</th>
                         <th>priority</th>
-                        <th>customer_code</th>
+                        {/* <th>customer_code</th>
                         <th>account_name</th>
                         <th>customer_contact_name</th>
                         <th>customer_contact_email</th>
-                        <th>customer_contact_title</th>
-                        {/* <th>case_id</th> */}
+                        <th>customer_contact_title</th> */}
+                        <th>case_id</th>
 
                         </tr>
                         </thead>
@@ -52,16 +52,16 @@ const TableData = () => {
                                 <td>{data.subject}</td>
                                 <td>{data.description}</td>
                                 <td>{data.case_owner}</td>
-                                <td>{data.case_number}</td>
+                                {/* <td>{data.case_number}</td> */}
                                 <td>{data.category}</td>
                                 <td>{data.sub_category}</td>
                                 <td>{data.priority}</td>
-                                <td>{data.customer_code}</td>
+                                {/* <td>{data.customer_code}</td>
                                 <td>{data.account_name}</td>
                                 <td>{data.customer_contact_name}</td>
                                 <td>{data.customer_contact_email}</td>
-                                <td>{data.customer_contact_title}</td>
-                                {/* <td>{data.case_id}</td> */}
+                                <td>{data.customer_contact_title}</td> */}
+                                <td>{data.case_id}</td>
                             </tr>
                             })
                             }                        
