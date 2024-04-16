@@ -7,7 +7,7 @@ const TableData = () => {
     const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/submit-form')
+    axios.get('http://localhost:3000/api/get_all_cases')
     .then(data => setData(data.data))
     .catch(err=> console.log(err))
   }, []);
@@ -24,6 +24,7 @@ const TableData = () => {
                        <table className="table table-bordered table-striped">
                         <thead>
                         <tr>
+                        <th>case_id</th>
                         <th>booking_number</th>
                         <th>account_code</th>
                         <th>po_number</th>
@@ -39,13 +40,14 @@ const TableData = () => {
                         <th>customer_contact_name</th>
                         <th>customer_contact_email</th>
                         <th>customer_contact_title</th> */}
-                        <th>case_id</th>
+                        
 
                         </tr>
                         </thead>
                         <tbody>
                          { data.map( data =>{
                             return <tr>
+                                <td>{data.case_id}</td>
                                 <td>{data.booking_number}</td>
                                 <td>{data.account_code}</td>
                                 <td>{data.po_number}</td>
@@ -61,7 +63,7 @@ const TableData = () => {
                                 <td>{data.customer_contact_name}</td>
                                 <td>{data.customer_contact_email}</td>
                                 <td>{data.customer_contact_title}</td> */}
-                                <td>{data.case_id}</td>
+                                
                             </tr>
                             })
                             }                        

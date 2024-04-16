@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 mongoose.connect('mongodb://localhost:27017/CamundaDB');
 
 //to get the data rom the DB
-app.get('/api/submit-form', async(req,res)=>{
+app.get('/api/get_all_cases', async(req,res)=>{
   try{
     const data = await DataModel.find();
     res.json(data);
@@ -29,7 +29,7 @@ app.get('/api/submit-form', async(req,res)=>{
 
 
 //to post the data to the db from the FORM
-app.post('/api/submit-form', async(req,res)=>{
+app.post('/api/post_case', async(req,res)=>{
   try{
     // const {booking_number,account_code,po_number,subject,description,case_owner,category,sub_category,priority} = req.body;
     const data = req.body

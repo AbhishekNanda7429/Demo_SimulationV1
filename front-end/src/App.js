@@ -8,8 +8,7 @@ import Edituser from "./Components/Edituser";
 import ExportCsv from "./Components/Exportcsv";
 import Caseform from "./Components/CaseForm";
 import Addmoreinput from "./Components/Addmoreinput";
-
-
+import UpdateCaseForm from "./Components/UpdateCaseForm";
 
 function App() 
 {  
@@ -26,6 +25,7 @@ function App()
       {/* <Route path='/edituser/:id' element={<Edituser/>} />  */}
       {/* <Route path='/exportcsv' element={<ExportCsv/>} />  */}
       <Route path='/caseform' element={<Caseform/>} /> 
+      <Route path='/updatecaseform' element={<UpdateCaseForm/>}  /> 
       {/* <Route path='/addmoreinput' element={<Addmoreinput/>} />  */}
     
      

@@ -41,7 +41,7 @@ const sendToAPI = (case_var) => {
     // }catch (error) {
     //     console.log(error);
     // }
-    fetch('http://localhost:3000/api/submit-form',{
+    fetch('http://localhost:3000/api/post_case',{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
