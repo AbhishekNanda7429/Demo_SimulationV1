@@ -14,18 +14,19 @@ const dataSchema = new mongoose.Schema({
   subject:String,
   description:String,
   case_owner:String,
-  case_number:String,
+  // case_number:String,
   category:String,
   sub_category:String,
   priority:String,
-  customer_code:String,
-  account_name:String,
-  customer_contact_name:String,
-  customer_contact_email:String,
-  customer_contact_title:String,
+  // customer_code:String,
+  // account_name:String,
+  // customer_contact_name:String,
+  // customer_contact_email:String,
+  // customer_contact_title:String,
   case_id:String
 });
 
 const DataModel = mongoose.model('finaldbs', dataSchema);
+
 
 module.exports = DataModel;

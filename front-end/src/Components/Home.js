@@ -1,5 +1,6 @@
 import React from "react";
 import myIcon from './svg/myIcon.svg';
+import landing_color from './svg/landing_color.svg';
 
 function Home()
 {
@@ -19,7 +20,7 @@ function Home()
     return (
         <div className="home">
           <h1>CRM Demo Simulation V1</h1>
-          <img src={myIcon} alt="My SVG Image"/>
+          <img src={landing_color} alt="My SVG Image"/>
         </div>
       );
 }

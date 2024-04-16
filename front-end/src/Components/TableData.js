@@ -1,5 +1,5 @@
 import React,{ useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import axios from 'axios';
 
 
@@ -7,7 +7,7 @@ const TableData = () => {
     const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/getdata')
+    axios.get('http://localhost:3000/api/submit-form')
     .then(data => setData(data.data))
     .catch(err=> console.log(err))
   }, []);
