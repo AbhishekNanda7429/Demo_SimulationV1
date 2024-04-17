@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-.leftPanel{ width: 15%; float: left; min-height: 990px; background-color: darkorange; color: #fff;}
+.leftPanel{ width: 15%; float: left; min-height: 3800px; background-color: darkorange; color: #fff;}
 .nav-link{ color: #fff; padding: 0px;}
 .nav-link:hover{ color: #000;}
 
@@ -29,4 +29,13 @@ code {
 .home svg {
   width: 200px;
   height: 200px;
+}
+
+.thick-line {
+  height: 4px; /* Adjust the height as per your requirement */
+  background-color: black; /* Adjust the color as per your requirement */
+}
+
+.space {
+  height: 20px; /* Adjust the height as per your requirement */
 }

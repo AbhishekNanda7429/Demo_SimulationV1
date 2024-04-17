@@ -24,7 +24,7 @@ const TableData = () => {
                        <table className="table table-bordered table-striped">
                         <thead>
                         <tr>
-                        <th>case_id</th>
+                        <th>case_number</th>
                         <th>booking_number</th>
                         <th>account_code</th>
                         <th>po_number</th>
@@ -47,22 +47,17 @@ const TableData = () => {
                         <tbody>
                          { data.map( data =>{
                             return <tr>
-                                <td>{data.case_id}</td>
+                                <td>{data.case_number}</td>
                                 <td>{data.booking_number}</td>
                                 <td>{data.account_code}</td>
                                 <td>{data.po_number}</td>
                                 <td>{data.subject}</td>
                                 <td>{data.description}</td>
                                 <td>{data.case_owner}</td>
-                                {/* <td>{data.case_number}</td> */}
                                 <td>{data.category}</td>
                                 <td>{data.sub_category}</td>
                                 <td>{data.priority}</td>
-                                {/* <td>{data.customer_code}</td>
-                                <td>{data.account_name}</td>
-                                <td>{data.customer_contact_name}</td>
-                                <td>{data.customer_contact_email}</td>
-                                <td>{data.customer_contact_title}</td> */}
+                                
                                 
                             </tr>
                             })

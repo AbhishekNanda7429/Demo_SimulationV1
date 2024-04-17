@@ -15,7 +15,7 @@ function Header()
                             <li className="nav-item"><Link to="/tabledata" className="nav-link">Case List</Link></li>
                             {/* <li className="nav-item"><Link to="/exportcsv" className="nav-link">Export Csv</Link></li> */}
                             <li className="nav-item"><Link to="/caseform" className="nav-link">New Case Form</Link></li>
-                            <li className="nav-item"><Link to="/updatecaseform" className="nav-link">Update Case Form</Link></li>
+                            {/* <li className="nav-item"><Link to="/updatecaseform" className="nav-link">Update Case Form</Link></li> */}
                             {/* <li className="nav-item"><Link to="/addmoreinput" className="nav-link">Add More Input</Link></li> */}
                             
                             

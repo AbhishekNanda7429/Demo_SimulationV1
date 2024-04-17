@@ -25,7 +25,7 @@ function App()
       {/* <Route path='/edituser/:id' element={<Edituser/>} />  */}
       {/* <Route path='/exportcsv' element={<ExportCsv/>} />  */}
       <Route path='/caseform' element={<Caseform/>} /> 
-      <Route path='/updatecaseform' element={<UpdateCaseForm/>}  /> 
+      {/* <Route path='/updatecaseform' element={<UpdateCaseForm/>}  />  */}
       {/* <Route path='/addmoreinput' element={<Addmoreinput/>} />  */}
     
      
