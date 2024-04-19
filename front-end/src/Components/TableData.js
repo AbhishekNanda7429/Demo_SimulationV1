@@ -52,7 +52,7 @@ const TableData = () => {
                          { data.map( data =>{
                             return <tr key={data.case_number}>
                                 <td>
-                                    <a href="#" 
+                                    <a href="he" 
                                     onClick={()=> handleCaseClick(data.case_number)}>
                                     {data.case_number}
                                     </a>
