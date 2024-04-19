@@ -5,6 +5,7 @@ import axios from 'axios';
 
 const TableData = () => {
     const [data, setData] = useState([]);
+    const [caseData, setCaseData] = useState(null);
 
   useEffect(() => {
     // axios.get('http://localhost:3000/api/get_all_cases')
@@ -12,7 +13,16 @@ const TableData = () => {
     .then(data => setData(data.data))
     .catch(err=> console.log(err))
   }, []);
- 
+
+  const handleCaseClick = async (caseNumber)=>{
+    try{
+        const response = await axios.get(`http://127.0.0.1:5000/api/get_case/${caseNumber}`);
+        setCaseData(response.data)
+    } catch(error){
+        alert("Error retrieving case data");
+    }
+  };
+
     return(
         <React.Fragment>
             <div className="container">
@@ -32,23 +42,21 @@ const TableData = () => {
                         <th>subject</th>
                         <th>description</th>
                         <th>case_owner</th>
-                        {/* <th>case_number</th> */}
                         <th>category</th>
                         <th>sub_category</th>
                         <th>priority</th>
-                        {/* <th>customer_code</th>
-                        <th>account_name</th>
-                        <th>customer_contact_name</th>
-                        <th>customer_contact_email</th>
-                        <th>customer_contact_title</th> */}
-                        
 
                         </tr>
                         </thead>
                         <tbody>
                          { data.map( data =>{
-                            return <tr>
-                                <td>{data.case_number}</td>
+                            return <tr key={data.case_number}>
+                                <td>
+                                    <a href="#" 
+                                    onClick={()=> handleCaseClick(data.case_number)}>
+                                    {data.case_number}
+                                    </a>
+                                </td>
                                 <td>{data.booking_number}</td>
                                 <td>{data.account_code}</td>
                                 <td>{data.po_number}</td>
@@ -58,13 +66,13 @@ const TableData = () => {
                                 <td>{data.category}</td>
                                 <td>{data.sub_category}</td>
                                 <td>{data.priority}</td>
-                                
-                                
                             </tr>
                             })
                             }                        
                         </tbody>
-                        </table>                            
+                        </table>      
+                        <h5 className="mt-2">CASE DETAIL</h5>
+                        {caseData && <pre>{JSON.stringify(caseData,null,2)}</pre>}                      
                     </div>
                 </div>
             </div>

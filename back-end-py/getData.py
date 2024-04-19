@@ -206,7 +206,7 @@ def get_case(case_number):
     else:
         return jsonify({"message":"Case not found!"}), 404
     
-
+#create a api to update the case
 
 #-------------------------------------------------------------------------------------------------------------------------
 # the below API is for dummy testing
