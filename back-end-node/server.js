@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/CamundaDB');
 
-//to get the data rom the DB
+//to get all the cases from the CRM-DB (for tabular view)
 app.get('/api/get_all_cases', async(req,res)=>{
   try{
     const data = await DataModel.find();
@@ -28,7 +28,7 @@ app.get('/api/get_all_cases', async(req,res)=>{
 
 
 
-//to post the data to the db from the FORM
+//to post the FORM data to CRM-DB
 app.post('/api/post_case', async(req,res)=>{
   try{
     // const {booking_number,account_code,po_number,subject,description,case_owner,category,sub_category,priority} = req.body;

@@ -50,7 +50,6 @@ const[formValue, setFormValue]= useState({
                                         case_closed:'',
                                         transaction_nbr:'',
                                         master_customer_code:'',
-                                        customer_code:'',
                                         account_name:'',
                                         consignee_b_l:'',
                                         notification_persion_1:'',
@@ -100,7 +99,6 @@ const[formValue, setFormValue]= useState({
                                         actual_departure_date:'',
                                         estimated_arrival_date:'',
                                         actual_arrival_date:'',
-                                        // case_id:'',
                                         });
 // const [fetchedData, setFetchedData] = useState([]);
 
@@ -129,7 +127,7 @@ const sendToAPI = (case_var) => {
     // }catch (error) {
     //     console.log(error);
     // }
-    fetch('http://localhost:3000/api/post_case',{
+    fetch('http://127.0.0.1:5000/api/cases',{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -261,8 +259,8 @@ return(
                     <h4>Customer Information</h4>
                     <div className="col-md-6">
                         <div className="mb-3">
-                            <label className="form-lable">Customer Code</label>
-                            <input type="text" name="customer_code" className="form-control" value={formValue.customer_code} onChange={ handleInput} />
+                            <label className="form-lable">Account Code</label>
+                            <input type="text" name="account_code" className="form-control" value={formValue.account_code} onChange={ handleInput} />
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -305,8 +303,8 @@ return(
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
-                            <label className="form-lable">Customer Code</label>
-                            <input type="text" name="customer_code" className="form-control" value={formValue.customer_code} onChange={ handleInput} />
+                            <label className="form-lable">Account Code</label>
+                            <input type="text" name="account_code" className="form-control" value={formValue.account_code} onChange={ handleInput} />
                         </div>
                     </div>
                     <div className="col-md-6">
