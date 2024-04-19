@@ -4,7 +4,7 @@ import {v4 as uuidv4 } from 'uuid';
 // import styled from  "@emotion/styled";
 
 // Styled component for the separator
-const Section_Separator = () => {
+const Sectionseparator = () => {
     return (
       <div
         style={{
@@ -102,7 +102,7 @@ const[formValue, setFormValue]= useState({
                                         });
 // const [fetchedData, setFetchedData] = useState([]);
 
-const[disable, setDisable]=useState('typing');
+const[disable]=useState('typing');
 
 const handleInput=(e)=>{
     // const {name, value}= e.target;
@@ -255,7 +255,7 @@ return(
                             <input type="text" name="case_closed" className="form-control" value={formValue.case_closed} onChange={ handleInput} />
                         </div>
                     </div>
-                    <Section_Separator />
+                    <Sectionseparator />
                     <h4>Customer Information</h4>
                     <div className="col-md-6">
                         <div className="mb-3">
@@ -287,7 +287,7 @@ return(
                             <input type="text" name="customer_contact_title" className="form-control" value={formValue.customer_contact_title} onChange={ handleInput} />
                         </div>
                     </div>
-                    <Section_Separator />
+                    <Sectionseparator />
                     <h4>Booking Details</h4>
                     <div className="col-md-6">
                         <div className="mb-3">
@@ -457,7 +457,7 @@ return(
                             <input type="text" name="mode" className="form-control" value={formValue.mode} onChange={ handleInput} />
                         </div>
                     </div>
-                    <Section_Separator />
+                    <Sectionseparator />
                     <h4>Shipment Details</h4>
                     <div className="col-md-6">
                         <div className="mb-3">

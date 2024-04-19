@@ -3,12 +3,8 @@ import {Routes, Route} from 'react-router-dom';
 import Header from './Components/Common/Header';
 import Home from './Components/Home';
 import TableData from './Components/TableData';
-import Adduser from "./Components/Adduser";
-import Edituser from "./Components/Edituser";
-import ExportCsv from "./Components/Exportcsv";
 import Caseform from "./Components/CaseForm";
-import Addmoreinput from "./Components/Addmoreinput";
-import UpdateCaseForm from "./Components/UpdateCaseForm";
+
 
 function App() 
 {  
