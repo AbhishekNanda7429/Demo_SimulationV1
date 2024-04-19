@@ -19,7 +19,7 @@ function Home()
     return (
         <div className="home">
           <h1>CRM Demo Simulation V1</h1>
-          <im src={landing_color} alt="My SVG Image"/>
+          <img src={landing_color} alt="My SVG Image"/>
         </div>
       );
 }
