@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app)
 
 # MongoDB connection
-client = MongoClient('mongodb://localhost:27017/')
+client = MongoClient('mongodb://10.18.127.239:27017/')
 db = client['CamundaDB']
 
 # Define collections
