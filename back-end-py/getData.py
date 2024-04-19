@@ -138,10 +138,10 @@ def combine_store():
 #-------------------------------------------------------------------------------------------------------------------------
 # the below APIs are for the FE
 
-@app.route('/api/cases',methods=["POST", "GET", "PUT"]) #react apis
-def Case():
+@app.route('/api/post_case',methods=["POST"]) #post case into the CRM-DB with an unique case_number
+def post_case():
     try:
-        if request.method == 'POST':
+         #if request.method == 'POST':
             # # Get the data from the form submission
             # data = request.form.to_dict()
             
@@ -160,33 +160,31 @@ def Case():
             data = request.get_json()
             result = collection3.insert_one(data)
             return jsonify({"message":"inserted successfully"})
-
-
-                
-        if request.method == 'GET':
-            # body = request.get_json()
-            # get_case_id = body.get('case_id')
-            form_data = request.form.to_dict()
-            get_case_id = form_data['case_id']
-            data = collection3.find_one({'case_id':get_case_id},{'_id': 0})
-            if data:
-                return jsonify(data), 200
-            else:
-                return jsonify({'error':'No Data Found!'}), 404
+        
+        # if request.method == 'GET':
+        #     # body = request.get_json()
+        #     # get_case_id = body.get('case_id')
+        #     form_data = request.form.to_dict()
+        #     get_case_id = form_data['case_id']
+        #     data = collection3.find_one({'case_id':get_case_id},{'_id': 0})
+        #     if data:
+        #         return jsonify(data), 200
+        #     else:
+        #         return jsonify({'error':'No Data Found!'}), 404
             
-        elif request.method == 'PUT':
-            data = request.form.to_dict()
-            case_id_to_update = data['case_id']
-            updated_data = collection3.update_one({'case_id': case_id_to_update},{"$set": data})
-            if updated_data:
-                return jsonify('Data Updated Successfully!')
-            else:
-                return jsonify("Error Updating The Data"),500
+        # elif request.method == 'PUT':
+        #     data = request.form.to_dict()
+        #     case_id_to_update = data['case_id']
+        #     updated_data = collection3.update_one({'case_id': case_id_to_update},{"$set": data})
+        #     if updated_data:
+        #         return jsonify('Data Updated Successfully!')
+        #     else:
+        #         return jsonify("Error Updating The Data"),500
         
     except Exception as e:
         return jsonify(str(e)),500
     
-@app.route('/api/get_all_case', methods=['GET']) #get all the cases
+@app.route('/api/get_all_cases', methods=['GET']) #get all the cases
 def get_all_case():
     try:
         # Fetch all documents from the collection
@@ -199,6 +197,16 @@ def get_all_case():
         return jsonify(data)
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+    
+@app.route('/api/get_case/<case_number>', methods = ['GET']) #get particular case by passing case_number
+def get_case(case_number):
+    case_details = collection3.find_one({"case_number": case_number}, { "_id": 0 })
+    if case_details:
+        return jsonify(case_details)
+    else:
+        return jsonify({"message":"Case not found!"}), 404
+    
+
 
 #-------------------------------------------------------------------------------------------------------------------------
 # the below API is for dummy testing
