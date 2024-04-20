@@ -9,7 +9,7 @@ const TableData = () => {
 
   useEffect(() => {
     // axios.get('http://localhost:3000/api/get_all_cases')
-    axios.get('http://13.201.39.108:5000/api/get_all_cases')
+    axios.get('http://13.233.235.130:5000/api/get_all_cases')
     .then(data => setData(data.data))
     .catch(err=> console.log(err))
   }, []);
