@@ -17,6 +17,7 @@ const TableData = () => {
   const handleCaseClick = async (caseNumber)=>{
     try{
         const response = await axios.get(`http://localhost:5000/api/get_case/${caseNumber}`);
+        console.log("response",response)
         setCaseData(response.data)
     } catch(error){
         alert("Error retrieving case data");
@@ -52,7 +53,7 @@ const TableData = () => {
                          { data.map( data =>{
                             return <tr key={data.case_number}>
                                 <td>
-                                    <a href="he" 
+                                    <a href="#" 
                                     onClick={()=> handleCaseClick(data.case_number)}>
                                     {data.case_number}
                                     </a>
