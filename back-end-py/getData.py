@@ -208,6 +208,14 @@ def get_case(case_number):
     
 #create a api to update the case
 
+@app.route('/api/delete_cases/<booking_number>', methods=['POST'])# delete case by passing booking number
+def delete_cases(booking_number):
+    delete_case = collection3.delete_many({"booking_number": booking_number}, { "_id": 0 })
+    if delete_case:
+        return jsonify({"message":" deleted successfully!!"})
+    else:
+        return jsonify({"message":"Case not found!"}), 404
+    
 #-------------------------------------------------------------------------------------------------------------------------
 # the below API is for dummy testing
 
