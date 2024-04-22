@@ -8,15 +8,15 @@ const TableData = () => {
     const [caseData, setCaseData] = useState(null);
 
   useEffect(() => {
-    // axios.get('http://localhost:3000/api/get_all_cases')
-    axios.get('http://13.233.235.130:5000/api/get_all_cases')
+    axios.get('http://localhost:5000/api/get_all_cases')
+    // axios.get('http://13.233.235.130:5000/api/get_all_cases')
     .then(data => setData(data.data))
     .catch(err=> console.log(err))
   }, []);
 
   const handleCaseClick = async (caseNumber)=>{
     try{
-        const response = await axios.get(`http://13.233.235.130:5000/api/get_case/${caseNumber}`);
+        const response = await axios.get(`http://localhost:5000/api/get_case/${caseNumber}`);
         setCaseData(response.data)
     } catch(error){
         alert("Error retrieving case data");

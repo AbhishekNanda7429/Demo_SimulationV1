@@ -127,7 +127,7 @@ const sendToAPI = (case_var) => {
     // }catch (error) {
     //     console.log(error);
     // }
-    fetch('http://13.233.235.130:5000/api/post_case',{
+    fetch('http://localhost:5000/api/post_case',{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
