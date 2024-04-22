@@ -16,7 +16,7 @@ const TableData = () => {
 
   const handleCaseClick = async (caseNumber)=>{
     try{
-        const response = await axios.get(`http://13.201.39.108:5000/api/get_case/${caseNumber}`);
+        const response = await axios.get(`http://13.233.235.130:5000/api/get_case/${caseNumber}`);
         setCaseData(response.data)
     } catch(error){
         alert("Error retrieving case data");
