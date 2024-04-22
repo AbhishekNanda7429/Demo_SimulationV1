@@ -210,7 +210,7 @@ def get_case(case_number):
 
 @app.route('/api/delete_cases/<booking_number>', methods=['POST'])# delete case by passing booking number
 def delete_cases(booking_number):
-    delete_case = collection3.delete_many({"booking_number": booking_number}, { "_id": 0 })
+    delete_case = collection3.delete_many({"booking_number": booking_number})
     if delete_case:
         return jsonify({"message":" deleted successfully!!"})
     else:
