@@ -151,9 +151,9 @@ return(
     <div className="container">
         <div className="row">
             <div className="col-md-12">
-            <h1 className="mt-2">Case Form</h1>
+            <h1 className="mt-2">NEW CASE FORM</h1>
             <Separator />
-            <h4>Case Information</h4>
+            <h3>Reference</h3>
             <p className="text-success"> {  } </p>
             <form method= "POST" onSubmit={handleSubmit}>
                 <div className="row">
@@ -175,6 +175,9 @@ return(
                             <input type="text" name="po_number" className="form-control" value={formValue.po_number} onChange={ handleInput}/>
                         </div>
                     </div>
+                    <Sectionseparator />
+                    <h3>Form</h3>
+                    <h4>Case Information</h4>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Case Number</label>
@@ -217,45 +220,6 @@ return(
                             <input type="text" name="priority" className="form-control" value={formValue.priority} onChange={ handleInput} />
                         </div>
                     </div>
-                    <h5>Triage</h5>
-                    <div className="col-md-6">
-                        <div className="mb-3">
-                            <label className="form-lable">Notes</label>
-                            <input type="text" name="notes" className="form-control" value={formValue.notes} onChange={ handleInput} />
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="mb-3">
-                            <label className="form-lable">Root Cause description</label>
-                            <input type="text" name="root_cause_description" className="form-control" value={formValue.root_cause_description} onChange={ handleInput} />
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="mb-3">
-                            <label className="form-lable">Root Cause Category</label>
-                            <input type="text" name="root_cause_category" className="form-control" value={formValue.root_cause_category} onChange={ handleInput} />
-                        </div>
-                    </div>
-                    <h5>Case Resolution</h5>
-                    <div className="col-md-6">
-                        <div className="mb-3">
-                            <label className="form-lable">Resolution description</label>
-                            <input type="text" name="resolution_description" className="form-control" value={formValue.resolution_description} onChange={ handleInput} />
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="mb-3">
-                            <label className="form-lable">Resolution Category</label>
-                            <input type="text" name="resolution_category" className="form-control" value={formValue.resolution_category} onChange={ handleInput} />
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="mb-3">
-                            <label className="form-lable">Case Closed</label>
-                            <input type="text" name="case_closed" className="form-control" value={formValue.case_closed} onChange={ handleInput} />
-                        </div>
-                    </div>
-                    <Sectionseparator />
                     <h4>Customer Information</h4>
                     <div className="col-md-6">
                         <div className="mb-3">
@@ -287,8 +251,47 @@ return(
                             <input type="text" name="customer_contact_title" className="form-control" value={formValue.customer_contact_title} onChange={ handleInput} />
                         </div>
                     </div>
+                    <h4>Triage</h4>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Notes</label>
+                            <input type="text" name="notes" className="form-control" value={formValue.notes} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Root Cause description</label>
+                            <input type="text" name="root_cause_description" className="form-control" value={formValue.root_cause_description} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Root Cause Category</label>
+                            <input type="text" name="root_cause_category" className="form-control" value={formValue.root_cause_category} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <h4>Case Resolution</h4>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Resolution description</label>
+                            <input type="text" name="resolution_description" className="form-control" value={formValue.resolution_description} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Resolution Category</label>
+                            <input type="text" name="resolution_category" className="form-control" value={formValue.resolution_category} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Case Closed</label>
+                            <input type="text" name="case_closed" className="form-control" value={formValue.case_closed} onChange={ handleInput} />
+                        </div>
+                    </div>
                     <Sectionseparator />
-                    <h4>Booking Details</h4>
+                    <h3>Booking Details</h3>
+                    <h4>Bookig header</h4>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Transaction Number</label>
@@ -458,7 +461,8 @@ return(
                         </div>
                     </div>
                     <Sectionseparator />
-                    <h4>Shipment Details</h4>
+                    <h3>Shipment Details</h3>
+                    <h4>Shipment reference</h4>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Service type</label>
@@ -485,14 +489,14 @@ return(
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
-                            <label className="form-lable">Container Number</label>
-                            <input type="text" name="container_number" className="form-control" value={formValue.container_number} onChange={ handleInput} />
+                            <label className="form-lable">BL Number</label>
+                            <input type="text" name="bl_number" className="form-control" value={formValue.bl_number} onChange={ handleInput} />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
-                            <label className="form-lable">BL Number</label>
-                            <input type="text" name="bl_number" className="form-control" value={formValue.bl_number} onChange={ handleInput} />
+                            <label className="form-lable">Container Number</label>
+                            <input type="text" name="container_number" className="form-control" value={formValue.container_number} onChange={ handleInput} />
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -521,7 +525,7 @@ return(
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
-                            <label className="form-lable">Voyage Number</label>
+                            <label className="form-lable"> A Voyage Number</label>
                             <input type="text" name="voyage_number" className="form-control" value={formValue.voyage_number} onChange={ handleInput} />
                         </div>
                     </div>
@@ -553,6 +557,13 @@ return(
                         <div className="mb-3">
                             <label className="form-lable">Destination Port</label>
                             <input type="text" name="destination_port" className="form-control" value={formValue.destination_port} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <h4> Shipment Status</h4>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Account Code</label>
+                            <input type="text" name="account_code" className="form-control" value={formValue.account_code} onChange={ handleInput} />
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -639,6 +650,246 @@ return(
                             <input type="text" name="actual_arrival_date" className="form-control" value={formValue.actual_arrival_date} onChange={ handleInput} />
                         </div>
                     </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Equipment  Number</label>
+                            <input type="text" name="eqipment_number" className="form-control" value={formValue.eqipment_number} onChange={ handleInput} />
+                        </div>
+                    </div>                    
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Equipment Type</label>
+                            <input type="text" name="eqipment_type" className="form-control" value={formValue.eqipment_type} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Total cartons (On container level)</label>
+                            <input type="text" name="total_cartoons_container_level" className="form-control" value={formValue.total_cartoons_container_level} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Total volume/CBM (On container level)</label>
+                            <input type="text" name="total_volume_cbm_container_level" className="form-control" value={formValue.total_volume_cbm_container_level} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Total Weight (On container level)</label>
+                            <input type="text" name="total_weight_container_level" className="form-control" value={formValue.total_weight_container_level} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Carrier Code</label>
+                            <input type="text" name="carrier_code" className="form-control" value={formValue.carrier_code} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Carrier Name</label>
+                            <input type="text" name="carrier_name" className="form-control" value={formValue.carrier_name} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Carrier Seal Number</label>
+                            <input type="text" name="carrier_seal_number" className="form-control" value={formValue.carrier_seal_number} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">ACS123 Voyage</label>
+                            <input type="text" name="acs123voyage" className="form-control" value={formValue.acs123voyage} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Voyage</label>
+                            <input type="text" name="voyage" className="form-control" value={formValue.voyage} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Departure Date (Actual/Estimated)</label>
+                            <input type="text" name="departure_date_actual/estimated" className="form-control" value={formValue.departure_date_actual_estimated} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Vessel Name</label>
+                            <input type="text" name="vessel_name" className="form-control" value={formValue.vessel_name} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Carrier Bill Number</label>
+                            <input type="text" name="carrier_bill_number" className="form-control" value={formValue.carrier_bill_number} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Booking Number</label>
+                            <input type="text" name="booking_number" className="form-control" value={formValue.booking_number} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">ADOD Date</label>
+                            <input type="text" name="adod_dt" className="form-control" value={formValue.adod_dt} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Arrival Date(Actual/Estimated)</label>
+                            <input type="text" name="arrival_date_actual/estimated" className="form-control" value={formValue.arrival_date_actual_estimated} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Ship Window Start Date</label>
+                            <input type="text" name="ship_window_start_dt" className="form-control" value={formValue.ship_window_start_dt} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Ship Window End Date</label>
+                            <input type="text" name="ship_window_end_dt" className="form-control" value={formValue.ship_window_end_dt} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Ship Window Date</label>
+                            <input type="text" name="ship_window_dt" className="form-control" value={formValue.ship_window_dt} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Planned Receipt Date</label>
+                            <input type="text" name="planned_receipt_dt" className="form-control" value={formValue.planned_receipt_dt} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">EDOD Date</label>
+                            <input type="text" name="edod_dt" className="form-control" value={formValue.edod_dt} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">ADOD Date</label>
+                            <input type="text" name="adod_dt" className="form-control" value={formValue.adod_dt} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">ETD</label>
+                            <input type="text" name="etd" className="form-control" value={formValue.etd} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Departure Date (Act/Est)</label>
+                            <input type="text" name="departure_dt_actual/estimated" className="form-control" value={formValue.departure_dt_actual_estimated} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Departure Date</label>
+                            <input type="text" name="departure_dt" className="form-control" value={formValue.departure_dt} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Docs Received Date</label>
+                            <input type="text" name="doc_received_dt" className="form-control" value={formValue.doc_received_dt} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Pouch Pickup Date</label>
+                            <input type="text" name="pouch_pickup_dt" className="form-control" value={formValue.pouch_pickup_dt} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">BL Receipt Date</label>
+                            <input type="text" name="bl_receipt_dt" className="form-control" value={formValue.bl_receipt_dt} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">First ASN Date</label>
+                            <input type="text" name="first_asn_dt" className="form-control" value={formValue.first_asn_dt} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">ASN Date</label>
+                            <input type="text" name="asn_dt" className="form-control" value={formValue.asn_dt} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">ETA</label>
+                            <input type="text" name="eta" className="form-control" value={formValue.eta} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Arrival Date(Est)</label>
+                            <input type="text" name="arrival_dt_est" className="form-control" value={formValue.first_asn_dt} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Arrival Date (Act)</label>
+                            <input type="text" name="arrival_dt_act" className="form-control" value={formValue.arrival_dt_act} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Arrival Date</label>
+                            <input type="text" name="arrival_dt" className="form-control" value={formValue.arrival_dt} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Final Destination Date (Sch)</label>
+                            <input type="text" name="final_destination_dt_sch" className="form-control" value={formValue.final_destination_dt_sch} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Final Destination Date (Est)</label>
+                            <input type="text" name="final_destination_dt_est" className="form-control" value={formValue.final_destination_dt_est} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">First ASN Date</label>
+                            <input type="text" name="first_asn_dt" className="form-control" value={formValue.first_asn_dt} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Final Destination Date (Act)</label>
+                            <input type="text" name="final_destination_dt_act" className="form-control" value={formValue.final_destination_dt_act} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Contr Deli to Consgne (Act)</label>
+                            <input type="text" name="contr_deli_to_consgne_act" className="form-control" value={formValue.contr_deli_to_consgne_act} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Final Destination Date</label>
+                            <input type="text" name="final_destination_dt" className="form-control" value={formValue.final_destination_dt} onChange={ handleInput} />
+                        </div>
+                    </div>
                     {/* <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Description</label>
@@ -657,8 +908,6 @@ return(
                             disabled={formValue.booking_number.length===0 || 
                                     formValue.account_code.length===0 || 
                                     formValue.po_number.length===0 ||
-                                    // formValue.subject.length===0 ||
-                                    // formValue.description.length===0 ||
                                     disable==='submitted'
                             
                             }

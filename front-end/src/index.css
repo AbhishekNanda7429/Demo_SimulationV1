@@ -12,8 +12,8 @@ code {
     monospace;
 }
 
-.leftPanel{ width: 15%; float: left; min-height: 3800px; background-color: darkorange; color: #fff;}
-.nav-link{ color: #fff; padding: 0px;}
+.leftPanel{ width: 15%; float: left; min-height: 5650px; background-color: darkorange; color: #fff;}
+.nav-link{ color: #fff; padding: 0px; font: bold;}
 .nav-link:hover{ color: #000;}
 
 .rightPanel{ width:80%; float: left;}
