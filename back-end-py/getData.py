@@ -105,14 +105,21 @@ def get_data_from_collection2():
 @app.route('/api/get-shipment-events', methods=['GET']) #get the particular shipment event
 def get_shipment_events():
 
-    request_body = request.json
-    booking_number = request_body.get("booking_number")
-    account_code = request_body.get("account_code")
-    po_number = request_body.get("po_number")
+    # request_body = request.json
+    # booking_number = request_body.get("booking_number")
+    # account_code = request_body.get("account_code")
+    # po_number = request_body.get("po_number")
 
-    data3 = collection5.find_one({"booking_number": booking_number,"account_code": account_code, "po_number": po_number}, {'_id': 0})
+    # data3 = collection5.find_one({"booking_number": booking_number,"account_code": account_code, "po_number": po_number}, {'_id': 0})
+    #-----------------------------------------------------------------
+    carrier_bill_number = request.args.get('carrier_bill_no')
 
-    return jsonify(data3)
+    query = {}
+    if carrier_bill_number:
+        query['carrier_bill_no'] = carrier_bill_number
+        data = list(collection5.find(query,{"_id": 0}))
+
+    return jsonify(data)
 
 @app.route('/api/combine_store', methods=[ 'POST' ]) #dont use
 def combine_store():
