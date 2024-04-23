@@ -43,6 +43,18 @@ def small_uuid(uuid_str):
     # Return the first 8 bytes of the MD5 hash as a hexadecimal string
     return md5_hash.hex()[:5]
 
+#
+def call_webhook(webhook_url, payload):
+    """
+    Sends a POST request to the specified webhook URL with the provided payload.
+    """
+    try:
+        response = requests.post(webhook_url, json=payload)
+        response.raise_for_status()
+        print(f"Webhook sent successfully. Response: {response.text}")
+    except requests.exceptions.RequestException as e:
+        print(f"Error sending webhook: {e}")
+
 #-------------------------------------------------------------------------------------------------------------------------
 # API endpoints
 @app.route('/api/get-booking-details', methods=['GET']) #get the particular booking detail
@@ -118,7 +130,7 @@ def post_case():
     case_number = data.get("case_number")
 
     payload = {
-            "caseid": case_number
+            "caseid": 1
         }
     
     try:
@@ -149,11 +161,8 @@ def get_case(case_number):
             "caseid": case_number
         }
     if case_details:
-        try:
-            res = requests.post(CAMUNDA_WEBHOOK_URL, json=payload)
+            call_webhook(CAMUNDA_WEBHOOK_URL,payload)
             return jsonify(case_details)
-        except Exception as e:
-            return jsonify(str(e)),500
     else:
         return jsonify({"message":"Case not found!"}), 404
     
