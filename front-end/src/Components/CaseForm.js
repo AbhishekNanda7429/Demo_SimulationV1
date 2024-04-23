@@ -154,9 +154,9 @@ return(
     <div className="container">
         <div className="row">
             <div className="col-md-12">
-            <h1 className="mt-2">Case Form</h1>
+            <h1 className="mt-2">NEW CASE FORM</h1>
             <Separator />
-            <h4>Case Information</h4>
+            <h3>Reference</h3>
             <p className="text-success"> {  } </p>
             <form method= "POST" onSubmit={handleSubmit}>
                 <div className="row">
@@ -178,6 +178,9 @@ return(
                             <input type="text" name="po_number" className="form-control" value={formValue.reference.po_number} onChange={ handleInput}/>
                         </div>
                     </div>
+                    <Sectionseparator />
+                    <h3>Form</h3>
+                    <h4>Case Information</h4>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Case Number</label>
@@ -220,45 +223,6 @@ return(
                             <input type="text" name="priority" className="form-control" value={formValue.priority} onChange={ handleInput} />
                         </div>
                     </div>
-                    <h5>Triage</h5>
-                    <div className="col-md-6">
-                        <div className="mb-3">
-                            <label className="form-lable">Notes</label>
-                            <input type="text" name="notes" className="form-control" value={formValue.notes} onChange={ handleInput} />
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="mb-3">
-                            <label className="form-lable">Root Cause description</label>
-                            <input type="text" name="root_cause_description" className="form-control" value={formValue.root_cause_description} onChange={ handleInput} />
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="mb-3">
-                            <label className="form-lable">Root Cause Category</label>
-                            <input type="text" name="root_cause_category" className="form-control" value={formValue.root_cause_category} onChange={ handleInput} />
-                        </div>
-                    </div>
-                    <h5>Case Resolution</h5>
-                    <div className="col-md-6">
-                        <div className="mb-3">
-                            <label className="form-lable">Resolution description</label>
-                            <input type="text" name="resolution_description" className="form-control" value={formValue.resolution_description} onChange={ handleInput} />
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="mb-3">
-                            <label className="form-lable">Resolution Category</label>
-                            <input type="text" name="resolution_category" className="form-control" value={formValue.resolution_category} onChange={ handleInput} />
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="mb-3">
-                            <label className="form-lable">Case Closed</label>
-                            <input type="text" name="case_closed" className="form-control" value={formValue.case_closed} onChange={ handleInput} />
-                        </div>
-                    </div>
-                    <Sectionseparator />
                     <h4>Customer Information</h4>
                     <div className="col-md-6">
                         <div className="mb-3">
@@ -290,8 +254,47 @@ return(
                             <input type="text" name="customer_contact_title" className="form-control" value={formValue.customer_contact_title} onChange={ handleInput} />
                         </div>
                     </div>
+                    <h4>Triage</h4>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Notes</label>
+                            <input type="text" name="notes" className="form-control" value={formValue.notes} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Root Cause description</label>
+                            <input type="text" name="root_cause_description" className="form-control" value={formValue.root_cause_description} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Root Cause Category</label>
+                            <input type="text" name="root_cause_category" className="form-control" value={formValue.root_cause_category} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <h4>Case Resolution</h4>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Resolution description</label>
+                            <input type="text" name="resolution_description" className="form-control" value={formValue.resolution_description} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Resolution Category</label>
+                            <input type="text" name="resolution_category" className="form-control" value={formValue.resolution_category} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Case Closed</label>
+                            <input type="text" name="case_closed" className="form-control" value={formValue.case_closed} onChange={ handleInput} />
+                        </div>
+                    </div>
                     <Sectionseparator />
-                    <h4>Booking Details</h4>
+                    <h3>Booking Details</h3>
+                    <h4>Bookig header</h4>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Transaction Number</label>
@@ -461,7 +464,8 @@ return(
                         </div>
                     </div>
                     <Sectionseparator />
-                    <h4>Shipment Details</h4>
+                    <h3>Shipment Details</h3>
+                    <h4>Shipment reference</h4>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Service type</label>
@@ -488,14 +492,14 @@ return(
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
-                            <label className="form-lable">Container Number</label>
-                            <input type="text" name="container_number" className="form-control" value={formValue.container_number} onChange={ handleInput} />
+                            <label className="form-lable">BL Number</label>
+                            <input type="text" name="bl_number" className="form-control" value={formValue.bl_number} onChange={ handleInput} />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
-                            <label className="form-lable">BL Number</label>
-                            <input type="text" name="bl_number" className="form-control" value={formValue.bl_number} onChange={ handleInput} />
+                            <label className="form-lable">Container Number</label>
+                            <input type="text" name="container_number" className="form-control" value={formValue.container_number} onChange={ handleInput} />
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -524,7 +528,7 @@ return(
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
-                            <label className="form-lable">Voyage Number</label>
+                            <label className="form-lable"> A Voyage Number</label>
                             <input type="text" name="voyage_number" className="form-control" value={formValue.voyage_number} onChange={ handleInput} />
                         </div>
                     </div>
@@ -556,6 +560,13 @@ return(
                         <div className="mb-3">
                             <label className="form-lable">Destination Port</label>
                             <input type="text" name="destination_port" className="form-control" value={formValue.destination_port} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <h4> Shipment Status</h4>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Account Code</label>
+                            <input type="text" name="account_code" className="form-control" value={formValue.account_code} onChange={ handleInput} />
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -900,8 +911,6 @@ return(
                             disabled={formValue.booking_number.length===0 || 
                                     formValue.account_code.length===0 || 
                                     formValue.po_number.length===0 ||
-                                    // formValue.subject.length===0 ||
-                                    // formValue.description.length===0 ||
                                     disable==='submitted'
                             
                             }
