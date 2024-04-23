@@ -142,11 +142,18 @@ def get_all_case():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
     
-@app.route('/api/get_case/<case_number>', methods = ['GET']) #get particular case by passing case_number
+@app.route('/api/get_case/<case_number>', methods = ['GET','POST']) #get particular case by passing case_number
 def get_case(case_number):
     case_details = collection3.find_one({"case_number": case_number}, { "_id": 0 })
+    payload = {
+            "caseid": case_number
+        }
     if case_details:
-        return jsonify(case_details)
+        try:
+            res = requests.post(CAMUNDA_WEBHOOK_URL, json=payload)
+            return jsonify(case_details)
+        except Exception as e:
+            return jsonify(str(e)),500
     else:
         return jsonify({"message":"Case not found!"}), 404
     
