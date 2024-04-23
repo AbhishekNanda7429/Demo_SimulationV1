@@ -90,9 +90,9 @@ def get_shipment_events():
 
     carrier_bill_number = request.args.get('carrier_bill_no')
 
-    query = {'carrier_bill_no':  carrier_bill_number}
+    query = {'carrier_bill_no':carrier_bill_number}
     
-    data = collection5.find(query,{"_id": 0})
+    data = collection5.find_one(query,{"_id": 0})
 
     return jsonify(data)
 
