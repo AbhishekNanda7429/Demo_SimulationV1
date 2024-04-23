@@ -32,10 +32,13 @@ const Sectionseparator = () => {
 
 const Caseform = () => {
 const[formValue, setFormValue]= useState({
+                                        reference: "",
                                         booking_number:'', 
                                         account_code:'', 
                                         po_number:'',
                                         // case_number:'',
+                                        // form:'',
+                                        // case_info:'',
                                         subject:'', 
                                         description:'', 
                                         case_owner:'', 
@@ -160,19 +163,19 @@ return(
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Booking Number</label>
-                            <input type="text" name="booking_number" className="form-control" value={formValue.booking_number} onChange={ handleInput} />
+                            <input type="text" name="booking_number" className="form-control" value={formValue.reference.booking_number} onChange={ handleInput} />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Account Code</label>
-                            <input type="text" name="account_code" className="form-control" value={formValue.account_code} onChange={ handleInput}/>
+                            <input type="text" name="account_code" className="form-control" value={formValue.reference.account_code} onChange={ handleInput}/>
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">PO Number No</label>
-                            <input type="text" name="po_number" className="form-control" value={formValue.po_number} onChange={ handleInput}/>
+                            <input type="text" name="po_number" className="form-control" value={formValue.reference.po_number} onChange={ handleInput}/>
                         </div>
                     </div>
                     <Sectionseparator />
@@ -839,7 +842,7 @@ return(
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Arrival Date(Est)</label>
-                            <input type="text" name="arrival_dt_est" className="form-control" value={formValue.first_asn_dt} onChange={ handleInput} />
+                            <input type="text" name="arrival_dt_est" className="form-control" value={formValue.arrival_dt_est} onChange={ handleInput} />
                         </div>
                     </div>
                     <div className="col-md-6">
