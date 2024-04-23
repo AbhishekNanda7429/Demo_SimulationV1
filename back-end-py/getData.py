@@ -124,17 +124,18 @@ def combine_store():
 
 @app.route('/api/post_case',methods=["POST"]) #post case into the CRM-DB with an unique case_number
 def post_case():
-    data = request.get_json()
-    result = collection3.insert_one(data)
-
-    case_number = data.get("case_number")
-
-    payload = {
-            "caseid": 1
-        }
-    
     try:
-        response = requests.post(CAMUNDA_WEBHOOK_URL, json=payload)
+        data = request.get_json()
+        result = collection3.insert_one(data)
+
+    # case_number = data.get("case_number")
+
+    # payload = {
+    #         "caseid": 1
+    #     }
+    
+    # try:
+        # response = requests.post(CAMUNDA_WEBHOOK_URL, json=payload)
         return jsonify({"message":"camunda hit successful"}),200
         
     except Exception as e:
@@ -157,11 +158,11 @@ def get_all_case():
 @app.route('/api/get_case/<case_number>', methods = ['GET','POST']) #get particular case by passing case_number
 def get_case(case_number):
     case_details = collection3.find_one({"case_number": case_number}, { "_id": 0 })
-    payload = {
-            "caseid": case_number
-        }
+    # payload = {
+    #         "caseid": case_number
+    #     }
     if case_details:
-            call_webhook(CAMUNDA_WEBHOOK_URL,payload)
+            # call_webhook(CAMUNDA_WEBHOOK_URL,payload)
             return jsonify(case_details)
     else:
         return jsonify({"message":"Case not found!"}), 404
