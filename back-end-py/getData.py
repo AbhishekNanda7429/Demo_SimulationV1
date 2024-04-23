@@ -118,7 +118,6 @@ def post_case():
     case_number = data.get("case_number")
 
     payload = {
-            "type": "form_submitted",
             "caseid": case_number
         }
     
