@@ -57,9 +57,9 @@ const TableData = () => {
                                     {data.case_number}
                                     </a>
                                 </td>
-                                <td>{data.reference.booking_number}</td>
-                                <td>{data.reference.account_code}</td>
-                                <td>{data.reference.po_number}</td>
+                                <td>{data.booking_number}</td>
+                                <td>{data.account_code}</td>
+                                <td>{data.po_number}</td>
                                 <td>{data.subject}</td>
                                 <td>{data.description}</td>
                                 <td>{data.case_owner}</td>
