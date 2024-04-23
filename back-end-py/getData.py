@@ -44,15 +44,6 @@ def small_uuid(uuid_str):
 @app.route('/api/get-booking-details', methods=['GET']) #get the particular booking detail
 def get_data_from_collection1():
 
-    # request_body = request.json
-    # booking_number = request_body.get("booking_number")
-    # account_code = request_body.get("account_code")
-    # po_number = request_body.get("po_number")
-
-    # # data1 = [serialize_document(doc) for doc in collection1.find_one({"case_number": case_number} , {'_id': 0})]
-    # data1 = collection1.find_one({"booking_number": booking_number,"account_code": account_code, "po_number": po_number}, {'_id': 0})
-    #-----------------------------------------
-
     booking_number = request.args.get('booking_details.booking_header.booking_number')
     account_code = request.args.get('booking_details.booking_header.account_code')
     # po_number = request.args.get('po_number')
@@ -62,13 +53,9 @@ def get_data_from_collection1():
         query['booking_number'] = booking_number
     if account_code:
         query['account_code'] = account_code
-    # if po_number:
-    #     query['po_number'] = po_number
 
     data = list(collection1.find(query,{"_id": 0}))
 
-    # Convert the MongoDB documents to JSON format
-    # response = [{'_id': str(doc['_id']), **doc} for doc in data]
 
 
     return (data)
@@ -76,27 +63,11 @@ def get_data_from_collection1():
 @app.route('/api/get-shipment-details', methods=['GET']) #get the particular shipment detail
 def get_data_from_collection2():
 
-    # request_body = request.json
-    # booking_number = request_body.get("booking_number")
-    # account_code = request_body.get("account_code")
-    # po_number = request_body.get("po_number")
-    
-
-    # # data2 = [serialize_document(doc) for doc in collection2.find_one({"case_number": case_number} , {'_id': 0})]
-    # data2 = collection2.find_one({"booking_number": booking_number,"account_code": account_code, "po_number": po_number}, {'_id': 0})
-    #---------------------------------------------------------
-
     booking_number = request.args.get('shipment_details.shipment_reference.booking_number')
-    # account_code = request.args.get('account_code')
-    # po_number = request.args.get('po_number')
-    
+
     query = {}
     if booking_number:
         query['booking_number'] = booking_number
-    # if account_code:
-    #     query['account_code'] = account_code
-    # if po_number:
-    #     query['po_number'] = po_number
 
     data = list(collection2.find(query,{"_id": 0}))
 
@@ -105,13 +76,6 @@ def get_data_from_collection2():
 @app.route('/api/get-shipment-events', methods=['GET']) #get the particular shipment event
 def get_shipment_events():
 
-    # request_body = request.json
-    # booking_number = request_body.get("booking_number")
-    # account_code = request_body.get("account_code")
-    # po_number = request_body.get("po_number")
-
-    # data3 = collection5.find_one({"booking_number": booking_number,"account_code": account_code, "po_number": po_number}, {'_id': 0})
-    #-----------------------------------------------------------------
     carrier_bill_number = request.args.get('carrier_bill_no')
 
     query = {}
@@ -148,45 +112,10 @@ def combine_store():
 @app.route('/api/post_case',methods=["POST"]) #post case into the CRM-DB with an unique case_number
 def post_case():
     try:
-         #if request.method == 'POST':
-            # # Get the data from the form submission
-            # data = request.form.to_dict()
-            
-            # # Set the mandatory fields here
-            # mandatory_fields = ['booking_number','account_code','po_number']
 
-            # if all (field in data for field in mandatory_fields):
-            #     case_id = small_uuid(str(uuid.uuid4()))
-            #     data['case_id'] = case_id
-            #     collection3.insert_one(data)
-            #     return jsonify({'message': 'Data inserted successfully','case_id': data['case_id']}), 201
-            # else:
-            #     return jsonify({'error': 'Missing mandatory fields'}), 400
-            
-            #----------------------------------------------------------------
             data = request.get_json()
             result = collection3.insert_one(data)
             return jsonify({"message":"inserted successfully"})
-        
-        # if request.method == 'GET':
-        #     # body = request.get_json()
-        #     # get_case_id = body.get('case_id')
-        #     form_data = request.form.to_dict()
-        #     get_case_id = form_data['case_id']
-        #     data = collection3.find_one({'case_id':get_case_id},{'_id': 0})
-        #     if data:
-        #         return jsonify(data), 200
-        #     else:
-        #         return jsonify({'error':'No Data Found!'}), 404
-            
-        # elif request.method == 'PUT':
-        #     data = request.form.to_dict()
-        #     case_id_to_update = data['case_id']
-        #     updated_data = collection3.update_one({'case_id': case_id_to_update},{"$set": data})
-        #     if updated_data:
-        #         return jsonify('Data Updated Successfully!')
-        #     else:
-        #         return jsonify("Error Updating The Data"),500
         
     except Exception as e:
         return jsonify(str(e)),500
