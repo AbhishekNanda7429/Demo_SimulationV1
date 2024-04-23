@@ -60,29 +60,28 @@ def call_webhook(webhook_url, payload):
 @app.route('/api/get-booking-details', methods=['GET']) #get the particular booking detail
 def get_data_from_collection1():
 
-    booking_number = request.args.get('booking_details.booking_header.booking_number')
-    account_code = request.args.get('booking_details.booking_header.account_code')
-    
-    query = {}
-    if booking_number:
-        query['booking_number'] = booking_number
-    if account_code:
-        query['account_code'] = account_code
+    booking_number = request.args.get('booking_number')
+    account_code = request.args.get('account_code')
 
-    data = list(collection1.find(query,{"_id": 0}))
+    query = {
+        'booking_details.booking_header.booking_number': booking_number,
+        'booking_details.booking_header.account_code': account_code
+        }
+
+    data = collection1.find_one(query,{"_id": 0})
 
     return (data)
 
 @app.route('/api/get-shipment-details', methods=['GET']) #get the particular shipment detail
 def get_data_from_collection2():
 
-    booking_number = request.args.get('shipment_details.shipment_reference.booking_number')
+    booking_number = request.args.get('booking_number')
 
-    query = {}
-    if booking_number:
-        query['booking_number'] = booking_number
+    query = {
+        'shipment_details.shipment_reference.booking_number':  booking_number
+        }
 
-    data = list(collection2.find(query,{"_id": 0}))
+    data = collection2.find_one(query,{"_id": 0})
 
     return jsonify(data)
 
@@ -91,10 +90,9 @@ def get_shipment_events():
 
     carrier_bill_number = request.args.get('carrier_bill_no')
 
-    query = {}
-    if carrier_bill_number:
-        query['carrier_bill_no'] = carrier_bill_number
-        data = list(collection5.find(query,{"_id": 0}))
+    query = {'carrier_bill_no':  carrier_bill_number}
+    
+    data = collection5.find(query,{"_id": 0})
 
     return jsonify(data)
 
@@ -128,14 +126,6 @@ def post_case():
         data = request.get_json()
         result = collection3.insert_one(data)
 
-    # case_number = data.get("case_number")
-
-    # payload = {
-    #         "caseid": 1
-    #     }
-    
-    # try:
-        # response = requests.post(CAMUNDA_WEBHOOK_URL, json=payload)
         return jsonify({"message":"camunda hit successful"}),200
         
     except Exception as e:
@@ -158,11 +148,8 @@ def get_all_case():
 @app.route('/api/get_case/<case_number>', methods = ['GET','POST']) #get particular case by passing case_number
 def get_case(case_number):
     case_details = collection3.find_one({"case_number": case_number}, { "_id": 0 })
-    # payload = {
-    #         "caseid": case_number
-    #     }
+
     if case_details:
-            # call_webhook(CAMUNDA_WEBHOOK_URL,payload)
             return jsonify(case_details)
     else:
         return jsonify({"message":"Case not found!"}), 404
