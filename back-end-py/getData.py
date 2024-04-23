@@ -46,7 +46,6 @@ def get_data_from_collection1():
 
     booking_number = request.args.get('booking_details.booking_header.booking_number')
     account_code = request.args.get('booking_details.booking_header.account_code')
-    # po_number = request.args.get('po_number')
     
     query = {}
     if booking_number:
@@ -55,8 +54,6 @@ def get_data_from_collection1():
         query['account_code'] = account_code
 
     data = list(collection1.find(query,{"_id": 0}))
-
-
 
     return (data)
 
