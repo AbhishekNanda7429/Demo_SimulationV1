@@ -5,9 +5,13 @@ import uuid
 import hashlib
 from bson.json_util import dumps
 from flask_cors import CORS
+import requests
 
 app = Flask(__name__)
 CORS(app)
+
+#camunda Webhook URL
+CAMUNDA_WEBHOOK_URL = "https://dsm-1.connectors.camunda.io/445520de-d59d-4bf1-be74-941375b851c3/inbound/startAPLInstance"
 
 # MongoDB connection
 client = MongoClient('mongodb://localhost:27017/',serverSelectionTimeoutMS=5000, socketTimeoutMS=5000, connectTimeoutMS=5000)
@@ -105,11 +109,18 @@ def combine_store():
 
 @app.route('/api/post_case',methods=["POST"]) #post case into the CRM-DB with an unique case_number
 def post_case():
+    
+    data = request.get_json()
+    result = collection3.insert_one(data)
+
+    payload = {
+            "type": "form_submitted",
+            "data": data
+        }
+    
     try:
-         
-            data = request.get_json()
-            result = collection3.insert_one(data)
-            return jsonify({"message":"inserted successfully"})
+        response = requests.post(CAMUNDA_WEBHOOK_URL, json=payload)
+        return jsonify({"message":"camunda hit successful"}),200
         
     except Exception as e:
         return jsonify(str(e)),500
