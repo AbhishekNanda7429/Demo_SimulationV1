@@ -119,7 +119,7 @@ def post_case():
 
     payload = {
             "type": "form_submitted",
-            "data": case_number
+            "caseid": case_number
         }
     
     try:
