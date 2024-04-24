@@ -1,11 +1,12 @@
 from flask import Flask, json, jsonify, request
-from pymongo import MongoClient
+from pymongo import MongoClient, ReturnDocument
 from bson import ObjectId
 import uuid
 import hashlib
 from bson.json_util import dumps
 from flask_cors import CORS
 import requests
+
 
 app = Flask(__name__)
 CORS(app)
@@ -96,6 +97,44 @@ def get_shipment_events():
 
     result = list(data)
     return jsonify(result)
+
+# @app.route('/api/find_update', methods=['PUT'])# update a document in collection1 based on filter condition
+# def find_and_update():
+#     case_number = request.args.get('case_number')
+#     query = {
+#         'form.case_info.case_number': case_number
+#     }
+    
+#     print(case_number)
+
+#     updated_data =  {"$set" : request.get_json()}
+
+#     result = collection3.find_one_and_update(query,updated_data,return_document=ReturnDocument.AFTER)
+#     if result:
+#         return jsonify(result),200
+#     else:
+#         return jsonify({"message":"No Data Found"}),404
+    
+@app.route('/api/find_update/<case_number>', methods=['PUT'])# update a document in collection1 based on filter condition
+def find_and_update(case_number):
+    try:
+
+        updated_data = request.get_json()
+        
+        query = {
+        'form.case_info.case_number': case_number
+        }
+
+        result = collection3.find_one_and_update(query,
+                                                {"$set":updated_data},
+                                                return_document=ReturnDocument.AFTER
+                                                )
+        if result:
+            return jsonify(result),200
+        else:
+            return jsonify({"message":"No Data Found"}),404
+    except Exception as e:
+        return jsonify({"error":str(e)}),500  
 
 @app.route('/api/combine_store', methods=[ 'POST' ]) #dont use
 def combine_store():
