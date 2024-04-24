@@ -53,7 +53,7 @@ const TableData = () => {
                             return <tr key={data.case_number}>
                                 <td>
                                     <a href="#" 
-                                    onClick={()=> handleCaseClick(data.case_number)}>
+                                    onClick={()=> handleCaseClick(data.form.case_info.case_number)}>
                                     {data.case_number}
                                     </a>
                                 </td>
