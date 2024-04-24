@@ -42,6 +42,9 @@ const[formValue, setFormValue]= useState({
                                         category:'',
                                         sub_category:'',
                                         priority:'',
+                                        customer_contact_name:'',
+                                        customer_contact_email:'',
+                                        customer_contact_title:'',
                                         notes:'',
                                         root_cause_description:'',
                                         root_cause_category:'',
@@ -64,9 +67,9 @@ const[formValue, setFormValue]= useState({
                                         vendor_name:'',
                                         shipper:'',
                                         destination_country:'',
-                                        discharge_post_bl:'',
+                                        discharge_port_bl:'',
                                         final_destination_bl:'',
-                                        load_post:'',
+                                        load_port:'',
                                         transport_mode:'',
                                         service_type:'',
                                         load_type:'',
@@ -394,7 +397,7 @@ return(
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Discharge Port (BL)</label>
-                            <input type="text" name="discharge_post_bl" className="form-control" value={formValue.discharge_post_bl} onChange={ handleInput} />
+                            <input type="text" name="discharge_port_bl" className="form-control" value={formValue.discharge_port_bl} onChange={ handleInput} />
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -406,7 +409,7 @@ return(
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Load Port</label>
-                            <input type="text" name="load_post" className="form-control" value={formValue.load_post} onChange={ handleInput} />
+                            <input type="text" name="load_port" className="form-control" value={formValue.load_port} onChange={ handleInput} />
                         </div>
                     </div>
                     <div className="col-md-6">
