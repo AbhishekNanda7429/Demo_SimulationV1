@@ -295,7 +295,7 @@ def get_all_case():
     
 @app.route('/api/get_case/<case_number>', methods = ['GET','POST']) #get particular case by passing case_number
 def get_case(case_number):
-    case_details = collection3.find_one({"case_number": case_number}, { "_id": 0 })
+    case_details = collection3.find_one({"form.case_info.case_number": case_number}, { "_id": 0 })
 
     if case_details:
             return jsonify(case_details)
