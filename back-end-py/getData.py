@@ -104,12 +104,9 @@ def find_and_update():
     query = {
         'form.case_info.case_number': case_number
     }
-    
-    # print(case_number)
 
     updated_data = request.get_json()
-    # {"$set" : request.get_json()}
-
+ 
     result = collection3.find_one_and_update(query,
                                              {"$set":updated_data},
                                              return_document=ReturnDocument.AFTER)
@@ -121,13 +118,10 @@ def find_and_update():
 # @app.route('/api/find_update/<case_number>', methods=['PUT'])# update a document in collection1 based on filter condition
 # def find_and_update(case_number):
 #     try:
-
 #         updated_data = request.get_json()
-        
 #         query = {
 #         'form.case_info.case_number': case_number
 #         }
-
 #         result = collection3.find_one_and_update(query,
 #                                                 {"$set":updated_data},
 #                                                 return_document=ReturnDocument.AFTER
