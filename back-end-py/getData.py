@@ -105,13 +105,16 @@ def find_and_update():
         'form.case_info.case_number': case_number
     }
     
-    print(case_number)
+    # print(case_number)
 
-    updated_data =  {"$set" : request.get_json()}
+    updated_data = request.get_json()
+    # {"$set" : request.get_json()}
 
-    result = collection3.find_one_and_update(query,updated_data,return_document=ReturnDocument.AFTER)
+    result = collection3.find_one_and_update(query,
+                                             {"$set":updated_data},
+                                             return_document=ReturnDocument.AFTER)
     if result:
-        return jsonify(result),200
+        return jsonify({"message":"Data updated!!"}),200
     else:
         return jsonify({"message":"No Data Found"}),404
     
