@@ -130,7 +130,7 @@ def find_and_update(case_number):
                                                 return_document=ReturnDocument.AFTER
                                                 )
         if result:
-            return jsonify(result),200
+            return jsonify({"message":"Data updated!!"}),200
         else:
             return jsonify({"message":"No Data Found"}),404
     except Exception as e:
