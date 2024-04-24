@@ -227,19 +227,19 @@ return(
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Booking Number</label>
-                            <input type="text" name="booking_number" className="form-control" value={formValue.reference.booking_number} onChange={ handleInput} />
+                            <input type="text" name="booking_number" className="form-control" value={formValue.booking_number} onChange={ handleInput} />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Account Code</label>
-                            <input type="text" name="account_code" className="form-control" value={formValue.reference.account_code} onChange={ handleInput}/>
+                            <input type="text" name="account_code" className="form-control" value={formValue.account_code} onChange={ handleInput}/>
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">PO Number No</label>
-                            <input type="text" name="po_number" className="form-control" value={formValue.reference.po_number} onChange={ handleInput}/>
+                            <input type="text" name="po_number" className="form-control" value={formValue.po_number} onChange={ handleInput}/>
                         </div>
                     </div>
                     <Sectionseparator />
