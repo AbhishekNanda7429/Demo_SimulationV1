@@ -43,7 +43,7 @@ def small_uuid(uuid_str):
     # Return the first 8 bytes of the MD5 hash as a hexadecimal string
     return md5_hash.hex()[:5]
 
-#
+#webhook component for camunda invoke
 def call_webhook(webhook_url, payload):
     """
     Sends a POST request to the specified webhook URL with the provided payload.
