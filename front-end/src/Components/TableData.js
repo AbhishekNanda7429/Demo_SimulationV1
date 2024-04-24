@@ -57,15 +57,15 @@ const TableData = () => {
                                     {data.case_number}
                                     </a>
                                 </td>
-                                <td>{data.booking_number}</td>
-                                <td>{data.account_code}</td>
-                                <td>{data.po_number}</td>
-                                <td>{data.subject}</td>
-                                <td>{data.description}</td>
-                                <td>{data.case_owner}</td>
-                                <td>{data.category}</td>
-                                <td>{data.sub_category}</td>
-                                <td>{data.priority}</td>
+                                <td>{data.reference.booking_number}</td>
+                                <td>{data.reference.account_code}</td>
+                                <td>{data.reference.po_number}</td>
+                                <td>{data.form.case_info.subject}</td>
+                                <td>{data.form.case_info.description}</td>
+                                <td>{data.form.case_info.case_owner}</td>
+                                <td>{data.form.case_info.category}</td>
+                                <td>{data.form.case_info.sub_category}</td>
+                                <td>{data.form.case_info.priority}</td>
                             </tr>
                             })
                             }                        
