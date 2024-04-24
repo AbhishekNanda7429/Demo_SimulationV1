@@ -137,7 +137,7 @@ def post_case():
                     "subject":data["subject"],
                     "description": data["description"],
                     "case_owner": data["case_owner"],
-                    "case_number": data["case_number"],
+                    # "case_number": data["case_number"],
                     "category": data["category"],
                     "sub_category": data["sub_category"],
                     "priority": data["priority"]
