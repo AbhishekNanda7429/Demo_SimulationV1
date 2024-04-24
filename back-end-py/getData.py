@@ -92,9 +92,10 @@ def get_shipment_events():
 
     query = {'carrier_bill_no':carrier_bill_number}
     
-    data = collection5.find_one(query,{"_id": 0})
+    data = collection5.find(query,{"_id": 0})
 
-    return jsonify(data)
+    result = list(data)
+    return jsonify(result)
 
 @app.route('/api/combine_store', methods=[ 'POST' ]) #dont use
 def combine_store():
