@@ -555,6 +555,18 @@ return(
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
+                            <label className="form-lable">Booking Number</label>
+                            <input type="text" name="booking_number" className="form-control" value={formValue.booking_number} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">PO Number</label>
+                            <input type="text" name="po_number" className="form-control" value={formValue.po_number} onChange={ handleInput} />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="mb-3">
                             <label className="form-lable">BL Number</label>
                             <input type="text" name="bl_number" className="form-control" value={formValue.bl_number} onChange={ handleInput} />
                         </div>
