@@ -50,7 +50,7 @@ const TableData = () => {
                         </thead>
                         <tbody>
                          { data.map( data =>{
-                            return <tr key={data.case_number}>
+                            return <tr key={data.form.case_info.case_number}>
                                 <td>
                                     <a href="#" 
                                     onClick={()=> handleCaseClick(data.form.case_info.case_number)}>
