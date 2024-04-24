@@ -148,7 +148,6 @@ ship_window_end_dt:'',
 ship_window_dt:'',
 planned_receipt_dt:'',
 edod_dt:'',
-adod_dt:'',
 etd:'',
 departure_dt_actual_estimated:'',
 departure_dt:'',
@@ -780,7 +779,7 @@ return(
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Departure Date (Actual/Estimated)</label>
-                            <input type="text" name="departure_date_actual/estimated" className="form-control" value={formValue.departure_date_actual_estimated} onChange={ handleInput} />
+                            <input type="text" name="departure_date_actual_estimated" className="form-control" value={formValue.departure_date_actual_estimated} onChange={ handleInput} />
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -799,12 +798,6 @@ return(
                         <div className="mb-3">
                             <label className="form-lable">Booking Number</label>
                             <input type="text" name="booking_number" className="form-control" value={formValue.booking_number} onChange={ handleInput} />
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="mb-3">
-                            <label className="form-lable">ADOD Date</label>
-                            <input type="text" name="adod_dt" className="form-control" value={formValue.adod_dt} onChange={ handleInput} />
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -931,12 +924,6 @@ return(
                         <div className="mb-3">
                             <label className="form-lable">Final Destination Date (Est)</label>
                             <input type="text" name="final_destination_dt_est" className="form-control" value={formValue.final_destination_dt_est} onChange={ handleInput} />
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="mb-3">
-                            <label className="form-lable">First ASN Date</label>
-                            <input type="text" name="first_asn_dt" className="form-control" value={formValue.first_asn_dt} onChange={ handleInput} />
                         </div>
                     </div>
                     <div className="col-md-6">
