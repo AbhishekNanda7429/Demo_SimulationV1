@@ -307,6 +307,29 @@ def post_case():
                     "final_destination_dt":data["final_destination_dt"],
                 }
             },
+            "shipment_events":{
+                "carrier_bill_number": data["carrier_bill_number"],
+                "carrier_bill_events":[
+                    {
+                        "carrier_bill_number":data["carrier_bill_number"],
+                        "event_dt":"",
+                        "event_name":"",
+                        "time_stamp":""
+                    },
+                    {
+                        "carrier_bill_number":data["carrier_bill_number"],
+                        "event_dt":"",
+                        "event_name":"",
+                        "time_stamp":""
+                    },
+                    {
+                        "carrier_bill_number":data["carrier_bill_number"],
+                        "event_dt":"",
+                        "event_name":"",
+                        "time_stamp":""
+                    },
+                ],
+            },
         }
         result = collection3.insert_one(data_to_store)
 
