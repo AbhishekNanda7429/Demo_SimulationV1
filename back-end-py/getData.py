@@ -228,6 +228,49 @@ def post_case():
                     "booked_date":data["booked_date"],
                     "mode":data["mode"],
                 },
+                "po_details":{
+                    "po_number": data["po_number"],
+                    "purchase_details":[
+                        {
+                        "purchanse_order_number":"",
+                        "department_po":"",
+                        "product_number":"",
+                        "ske_description":"",
+                        "shipped_ctns":"",
+                        "shipped_quantity":"",
+                        "shipped_item_weight_kg":"",
+                        "shipped_item_volume_cbm":"",
+                        "sku_unit_fob_ccy":"",
+                        "sku_unit_fob_amount":"",
+                        "commodity_code":"",
+                        "cargo_description":"",
+                        "manufacturing_country":"",
+                        "description":"",
+                        "harmonized_code_sku":"",
+                        "sku_number":"",
+                        "load_sequence_number":"",
+                        },
+                        {
+                        "purchanse_order_number":"",
+                        "department_po":"",
+                        "product_number":"",
+                        "ske_description":"",
+                        "shipped_ctns":"",
+                        "shipped_quantity":"",
+                        "shipped_item_weight_kg":"",
+                        "shipped_item_volume_cbm":"",
+                        "sku_unit_fob_ccy":"",
+                        "sku_unit_fob_amount":"",
+                        "commodity_code":"",
+                        "cargo_description":"",
+                        "manufacturing_country":"",
+                        "description":"",
+                        "harmonized_code_sku":"",
+                        "sku_number":"",
+                        "load_sequence_number":"",
+                        },
+                    ],
+                }
             },
             "shipment_details":{
                 "shipment_reference":{
@@ -311,19 +354,19 @@ def post_case():
                 "carrier_bill_number": data["carrier_bill_number"],
                 "carrier_bill_events":[
                     {
-                        "carrier_bill_number":data["carrier_bill_number"],
+                        "carrier_bill_number":"",
                         "event_dt":"",
                         "event_name":"",
                         "time_stamp":""
                     },
                     {
-                        "carrier_bill_number":data["carrier_bill_number"],
+                        "carrier_bill_number":"",
                         "event_dt":"",
                         "event_name":"",
                         "time_stamp":""
                     },
                     {
-                        "carrier_bill_number":data["carrier_bill_number"],
+                        "carrier_bill_number":"",
                         "event_dt":"",
                         "event_name":"",
                         "time_stamp":""
