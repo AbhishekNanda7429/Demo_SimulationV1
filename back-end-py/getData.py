@@ -89,9 +89,9 @@ def get_data_from_collection2():
 @app.route('/api/get-shipment-events', methods=['GET']) #get the particular shipment event
 def get_shipment_events():
 
-    carrier_bill_number = request.args.get('carrier_bill_no')
+    carrier_bill_number = request.args.get('carrier_bill_number')
 
-    query = {'carrier_bill_no':carrier_bill_number}
+    query = {'shipment_events.carrier_bill_number':carrier_bill_number}
     
     data = collection5.find(query,{"_id": 0})
 
