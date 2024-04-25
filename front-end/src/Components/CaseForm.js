@@ -724,7 +724,7 @@ return(
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
-                            <label className="form-lable">Actual Departure Date</label>
+                            <label className="form-lable">Actual Arrival Date</label>
                             <input type="text" name="actual_arrival_date" className="form-control" value={formValue.actual_arrival_date} onChange={ handleInput} />
                         </div>
                     </div>
