@@ -815,7 +815,7 @@ return(
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Arrival Date(Actual/Estimated)</label>
-                            <input type="text" name="arrival_date_actual/estimated" className="form-control" value={formValue.arrival_date_actual_estimated} onChange={ handleInput} />
+                            <input type="text" name="arrival_date_actual_estimated" className="form-control" value={formValue.arrival_date_actual_estimated} onChange={ handleInput} />
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -863,7 +863,7 @@ return(
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Departure Date (Act/Est)</label>
-                            <input type="text" name="departure_dt_actual/estimated" className="form-control" value={formValue.departure_dt_actual_estimated} onChange={ handleInput} />
+                            <input type="text" name="departure_dt_actual_estimated" className="form-control" value={formValue.departure_dt_actual_estimated} onChange={ handleInput} />
                         </div>
                     </div>
                     <div className="col-md-6">
