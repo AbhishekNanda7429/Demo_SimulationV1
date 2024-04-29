@@ -322,7 +322,6 @@ def post_case():
                     "departure_date_actual_estimated":"",
                     "vessel_name":"",
                     "carrier_bill_number":"",
-                    "booking_number":"",
                     "arrival_date_actual_estimated":"",
                     "ship_window_start_dt":"",
                     "ship_window_end_dt":"",
