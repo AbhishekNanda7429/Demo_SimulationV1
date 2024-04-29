@@ -295,6 +295,7 @@ def post_case():
                 "Shipment_status":{
                     "account_code":"",
                     "booking_status":"",
+                    "po_number":"",
                     "shipment_status":"",
                     "latest_event":"",
                     "si_cutoff_date":"",
@@ -346,6 +347,7 @@ def post_case():
                     "final_destination_dt_act":"",
                     "contr_deli_to_consgne_act":"",
                     "final_destination_dt":"",
+                    "control_deli_to_consgne_act":""
                 }
 },
             "shipment_events":{
