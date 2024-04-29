@@ -346,7 +346,7 @@ def post_case():
                     "final_destination_dt_act":"",
                     "contr_deli_to_consgne_act":"",
                     "final_destination_dt":"",
-                    "control_deli_to_consgne_act":""
+                    
                 }
 },
             "shipment_events":{
