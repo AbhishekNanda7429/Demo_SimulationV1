@@ -111,7 +111,7 @@ def find_and_update():
                                              {"$set":updated_data},
                                              return_document=ReturnDocument.AFTER)
     if result:
-        return jsonify({"message":"Data updated!!"}),200
+        return jsonify({"message":"Data updated!!", "data": result}), 200
     else:
         return jsonify({"message":"No Data Found"}),404
     
