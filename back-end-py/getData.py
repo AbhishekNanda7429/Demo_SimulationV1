@@ -279,6 +279,7 @@ def post_case():
                     "incoterm":"",
                     "load_type":"",
                     "booking_number":"",
+                    "po_number":"",
                     "bl_number":"",
                     "container_number":"",
                     "fcr_number":"",
@@ -295,7 +296,6 @@ def post_case():
                 "Shipment_status":{
                     "account_code":"",
                     "booking_status":"",
-                    "po_number":"",
                     "shipment_status":"",
                     "latest_event":"",
                     "si_cutoff_date":"",
