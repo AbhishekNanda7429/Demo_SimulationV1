@@ -91,7 +91,7 @@ def get_shipment_events():
 
     carrier_bill_number = request.args.get('carrier_bill_number')
 
-    query = {'shipment_events.carrier_bill_number':carrier_bill_number}
+    query = {'shipment_details.Shipment_status.carrier_bill_number':carrier_bill_number}
     
     data = collection5.find(query,{"_id": 0})
 
