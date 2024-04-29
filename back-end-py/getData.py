@@ -48,43 +48,61 @@ def small_uuid(uuid_str):
 @app.route('/api/get-booking-details', methods=['GET']) #get the particular booking detail
 def get_data_from_collection1():
 
-    booking_number = request.args.get('booking_details.booking_header.booking_number')
-    account_code = request.args.get('booking_details.booking_header.account_code')
-    
-    query = {}
-    if booking_number:
-        query['booking_number'] = booking_number
-    if account_code:
-        query['account_code'] = account_code
+    booking_number = request.args.get('booking_number')
+    account_code = request.args.get('account_code')
 
-    data = list(collection1.find(query,{"_id": 0}))
+    query = {
+        'booking_details.booking_header.booking_number': booking_number,
+        'booking_details.booking_header.account_code': account_code
+        }
 
-    return (data)
+    data = collection1.find_one(query,{"_id": 0})
+
+    return jsonify(data)
 
 @app.route('/api/get-shipment-details', methods=['GET']) #get the particular shipment detail
 def get_data_from_collection2():
 
-    booking_number = request.args.get('shipment_details.shipment_reference.booking_number')
+    booking_number = request.args.get('booking_number')
 
-    query = {}
-    if booking_number:
-        query['booking_number'] = booking_number
+    query = {
+        'shipment_details.shipment_reference.booking_number':  booking_number
+        }
 
-    data = list(collection2.find(query,{"_id": 0}))
+    data = collection2.find_one(query,{"_id": 0})
 
     return jsonify(data)
 
-@app.route('/api/get-shipment-events', methods=['GET']) #get the particular shipment event
+@app.route('/api/get-shipment-events', methods=['GET']) #get the particular shipment event# not working in this branch, working in main branch
 def get_shipment_events():
 
-    request_body = request.json
-    booking_number = request_body.get("booking_number")
-    account_code = request_body.get("account_code")
-    po_number = request_body.get("po_number")
+    carrier_bill_number = request.args.get('carrier_bill_number')
 
-    data3 = collection5.find_one({"booking_number": booking_number,"account_code": account_code, "po_number": po_number}, {'_id': 0})
+    query = {'shipment_events.carrier_bill_number':carrier_bill_number}
+    
+    data = collection5.find(query,{"_id": 0})
 
-    return jsonify(data3)
+    # result = list(data)
+    return jsonify({'result':list(data)})
+
+@app.route('/api/find_update', methods=['PUT'])# update a document in collection1 based on filter condition
+def find_and_update():
+    case_number = request.args.get('case_number')
+    query = {
+        'form.case_info.case_number': case_number
+    }
+
+    updated_data = request.get_json()
+ 
+    result = collection3.find_one_and_update(query,
+                                             {"$set":updated_data},
+                                            #  return_document=ReturnDocument.AFTER
+                                             )
+    if result:
+        return jsonify({"message":"Data updated!!"}), 200
+    else:
+        return jsonify({"message":"No Data Found"}),404
+    
 
 @app.route('/api/combine_store', methods=[ 'POST' ]) #dont use
 def combine_store():
