@@ -73,7 +73,7 @@ def get_data_from_collection2():
 
     return jsonify(data)
 
-@app.route('/api/get-shipment-events', methods=['GET']) #get the particular shipment event# not working in this branch, working in main branch
+@app.route('/api/get-shipment-events', methods=['GET']) #get the particular shipment event
 def get_shipment_events():
 
     carrier_bill_number = request.args.get('carrier_bill_number')
@@ -82,8 +82,8 @@ def get_shipment_events():
     
     data = collection5.find(query,{"_id": 0})
 
-    # result = list(data)
-    return jsonify({'result':list(data)})
+    result = list(data)
+    return jsonify(result)
 
 @app.route('/api/find_update', methods=['PUT'])# update a document in collection1 based on filter condition
 def find_and_update():
