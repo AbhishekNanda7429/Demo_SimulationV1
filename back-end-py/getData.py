@@ -65,8 +65,8 @@ def get_data_from_collection1():
     account_code = request.args.get('account_code')
 
     query = {
-        'reference.booking_number': booking_number,
-        'reference.account_code': account_code
+        'booking_details.booking_header.booking_number': booking_number,
+        'booking_details.booking_header.account_code': account_code
         }
 
     data = collection1.find_one(query,{"_id": 0})
