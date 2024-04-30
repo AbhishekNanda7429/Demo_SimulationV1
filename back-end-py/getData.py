@@ -68,6 +68,9 @@ def get_data_from_collection1():
         'booking_details.booking_header.booking_number': booking_number,
         'booking_details.booking_header.account_code': account_code
         }
+    
+    print(f'booking_number' , booking_number)
+    print(f"account_code", account_code)
 
     data = collection1.find_one(query,{"_id": 0})
 
@@ -79,7 +82,7 @@ def get_data_from_collection2():
     booking_number = request.args.get('booking_number')
 
     query = {
-        'reference.booking_number':  booking_number
+        'shipment_details.shipment_reference.booking_number':  booking_number
         }
 
     data = collection2.find_one(query,{"_id": 0})
