@@ -84,6 +84,7 @@ def get_data_from_collection2():
     query = {
         'shipment_details.shipment_reference.booking_number':  booking_number
         }
+    print(f'booking_number' , booking_number)
 
     data = collection2.find_one(query,{"_id": 0})
 
@@ -94,7 +95,10 @@ def get_shipment_events():
 
     carrier_bill_number = request.args.get('carrier_bill_number')
 
-    query = {'shipment_events.carrier_bill_number':carrier_bill_number}
+    query = {
+        'shipment_events.carrier_bill_number':carrier_bill_number
+        }
+    print(f'carrier_bill_number' , carrier_bill_number)
     
     data = collection5.find(query,{"_id": 0})
 
@@ -109,6 +113,7 @@ def find_and_update():
     }
 
     updated_data = request.get_json()
+    print(f"updated_data: ", updated_data)
  
     result = collection3.find_one_and_update(query,
                                              {"$set":updated_data},
