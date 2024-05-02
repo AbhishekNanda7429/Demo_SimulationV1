@@ -410,6 +410,8 @@ def get_case(case_number):
             return jsonify(case_details)
     else:
         return jsonify({"message":"Case not found!"}), 404
+    
+#create a api to update the case
 
 @app.route('/api/send_webhook', mthods=['POST'])    
 def send_webhook():
@@ -424,7 +426,6 @@ def send_webhook():
     else:
         return jsonify({'success': False, 'error': 'Missing case_number'}), 400
 
-#create a api to update the case
 
 @app.route('/api/delete_cases/<booking_number>', methods=['POST'])# delete case by passing booking number
 def delete_cases(booking_number):

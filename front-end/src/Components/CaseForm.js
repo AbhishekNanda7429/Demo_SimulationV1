@@ -241,26 +241,13 @@ return(
                     </div>
                     <Sectionseparator />
                     <h3>Form</h3>
-                    <h4>Triage</h4>
-                    <div className="col-md-6">
-                        <div className="mb-3">
-                            <label className="form-lable">Notes</label>
-                            <input type="text" name="notes" className="form-control" value={formValue.notes} onChange={ handleInput} />
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="mb-3">
-                            <label className="form-lable">Root Cause description</label>
-                            <input type="text" name="root_cause_description" className="form-control" value={formValue.root_cause_description} onChange={ handleInput} />
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="mb-3">
-                            <label className="form-lable">Root Cause Category</label>
-                            <input type="text" name="root_cause_category" className="form-control" value={formValue.root_cause_category} onChange={ handleInput} />
-                        </div>
-                    </div>
                     <h4>Case Information</h4>
+                    {/* <div className="col-md-6">
+                        <div className="mb-3">
+                            <label className="form-lable">Case Number</label>
+                            <input type="text" name="case_number" className="form-control" value={formValue.case_number} onChange={ handleInput} />
+                        </div>
+                    </div> */}
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Subject</label>
@@ -328,7 +315,7 @@ return(
                             <input type="text" name="customer_contact_title" className="form-control" value={formValue.customer_contact_title} onChange={ handleInput} />
                         </div>
                     </div>
-                    {/* <h4>Triage</h4>
+                    <h4>Triage</h4>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Notes</label>
@@ -346,7 +333,7 @@ return(
                             <label className="form-lable">Root Cause Category</label>
                             <input type="text" name="root_cause_category" className="form-control" value={formValue.root_cause_category} onChange={ handleInput} />
                         </div>
-                    </div> */}
+                    </div>
                     <h4>Case Resolution</h4>
                     <div className="col-md-6">
                         <div className="mb-3">
@@ -982,11 +969,12 @@ return(
                         <div className="mb-3">
                             <label className="form-lable"></label>
                             <button className="btn btn-success btn-lg"
-                            // disabled={formValue.booking_number.length===0 || 
-                            //         formValue.account_code.length===0 || 
-                            //         formValue.po_number.length===0 ||
-                            //         disable==='submitted'
-                            // }
+                            disabled={formValue.booking_number.length===0 || 
+                                    formValue.account_code.length===0 || 
+                                    formValue.po_number.length===0 ||
+                                    disable==='submitted'
+                            
+                            }
                             
                             >Submit</button>
                             </div>

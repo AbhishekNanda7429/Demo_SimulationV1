@@ -23,7 +23,7 @@ const TableData = () => {
     }
   };
 
-  const sendWebhook = async (case_number) => {
+   const sendWebhook = async (case_number) => {
     try {
       const response = await axios.post('/api/send_webhook', { case_number });
       if (response.data.success) {
