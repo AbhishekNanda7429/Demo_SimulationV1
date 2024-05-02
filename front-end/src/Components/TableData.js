@@ -49,14 +49,15 @@ const TableData = () => {
                         <thead>
                         <tr>
                         <th>Case Number</th>
+                        <th>Triage Note</th>
                         <th>Booking Number</th>
                         <th>Account Code</th>
                         <th>PO Number</th>
                         <th>Subject</th>
-                        <th>Description</th>
+                        {/* <th>Description</th> */}
                         <th>Case Owner</th>
                         <th>Category</th>
-                        <th>Sub Category</th>
+                        {/* <th>Sub Category</th> */}
                         <th>Priority</th>
                         <th>Action</th>
 
@@ -71,14 +72,15 @@ const TableData = () => {
                                     {data.form.case_info.case_number}
                                     </a>
                                 </td>
+                                <td>{data.form.triage.notes}</td>
                                 <td>{data.reference.booking_number}</td>
                                 <td>{data.reference.account_code}</td>
                                 <td>{data.reference.po_number}</td>
                                 <td>{data.form.case_info.subject}</td>
-                                <td>{data.form.case_info.description}</td>
+                                {/* <td>{data.form.case_info.description}</td> */}
                                 <td>{data.form.case_info.case_owner}</td>
                                 <td>{data.form.case_info.category}</td>
-                                <td>{data.form.case_info.sub_category}</td>
+                                {/* <td>{data.form.case_info.sub_category}</td> */}
                                 <td>{data.form.case_info.priority}</td>
                                 <td>                               
                                     <button onClick={() => sendWebhook(data.form.case_info.case_number)}>Update Shipping Details</button>
