@@ -74,18 +74,18 @@ const TableData = () => {
                        <table className="table table-bordered table-striped">
                         <thead>
                         <tr>
-                        <th>Case Number</th>
-                        <th>Triage Note</th>
-                        <th>Booking Number</th>
-                        <th>Account Code</th>
-                        <th>PO Number</th>
-                        <th>Subject</th>
-                        {/* <th>Description</th> */}
-                        <th>Case Owner</th>
-                        <th>Category</th>
-                        {/* <th>Sub Category</th> */}
-                        <th>Priority</th>
-                        <th>Action</th>
+                        <th style={{ textAlign: 'center' }}>Case Number</th>
+                        <th style={{ textAlign: 'center' }}>Triage Note</th>
+                        <th style={{ textAlign: 'center' }}>Booking Number</th>
+                        <th style={{ textAlign: 'center' }}>Account Code</th>
+                        <th style={{ textAlign: 'center' }}>PO Number</th>
+                        <th style={{ textAlign: 'center' }}>Subject</th>
+                        {/* <th style={{ textAlign: 'center' }}>Description</th> */}
+                        <th style={{ textAlign: 'center' }}>Case Owner</th>
+                        <th style={{ textAlign: 'center' }}>Category</th>
+                        {/* <th style={{ textAlign: 'center' }}>Sub Category</th> */}
+                        <th style={{ textAlign: 'center' }}>Priority</th>
+                        <th style={{ textAlign: 'center' }}>Action</th>
 
                         </tr>
                         </thead>
