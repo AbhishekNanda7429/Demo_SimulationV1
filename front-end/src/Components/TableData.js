@@ -374,7 +374,7 @@ function CaseDetailsForm({caseData}){
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Discharge Port (BL)</label>
-                            <input type="text" name="discharge_post_bl" className="form-control" value={caseData.booking_details.booking_header.discharge_post_bl} readOnly  />
+                            <input type="text" name="discharge_port_bl" className="form-control" value={caseData.booking_details.booking_header.discharge_port_bl} readOnly  />
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -386,7 +386,7 @@ function CaseDetailsForm({caseData}){
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Load Port</label>
-                            <input type="text" name="load_post" className="form-control" value={caseData.booking_details.booking_header.load_post} readOnly  />
+                            <input type="text" name="load_port" className="form-control" value={caseData.booking_details.booking_header.load_port} readOnly  />
                         </div>
                     </div>
                     {/* <div className="col-md-6">
