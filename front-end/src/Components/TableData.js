@@ -1,5 +1,5 @@
 import React,{ useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from 'axios';
 
 
@@ -23,6 +23,19 @@ const TableData = () => {
     }
   };
 
+  const sendWebhook = async (case_number) => {
+    try {
+      const response = await axios.post('/api/send_webhook', { case_number });
+      if (response.data.success) {
+        console.log('Webhook sent successfully');
+      } else {
+        console.error('Error sending webhook:', response.data.error);
+      }
+    } catch (error) {
+      console.error('Error sending webhook:', error);
+    }
+  };
+
     return(
         <React.Fragment>
             <div className="container">
@@ -35,16 +48,17 @@ const TableData = () => {
                        <table className="table table-bordered table-striped">
                         <thead>
                         <tr>
-                        <th>case_number</th>
-                        <th>booking_number</th>
-                        <th>account_code</th>
-                        <th>po_number</th>
-                        <th>subject</th>
-                        <th>description</th>
-                        <th>case_owner</th>
-                        <th>category</th>
-                        <th>sub_category</th>
-                        <th>priority</th>
+                        <th>Case Number</th>
+                        <th>Booking Number</th>
+                        <th>Account Code</th>
+                        <th>PO Number</th>
+                        <th>Subject</th>
+                        <th>Description</th>
+                        <th>Case Owner</th>
+                        <th>Category</th>
+                        <th>Sub Category</th>
+                        <th>Priority</th>
+                        <th>Action</th>
 
                         </tr>
                         </thead>
@@ -57,6 +71,7 @@ const TableData = () => {
                                     {data.form.case_info.case_number}
                                     </a>
                                 </td>
+                                <td>{data.form.case_info.case_number}</td>
                                 <td>{data.reference.booking_number}</td>
                                 <td>{data.reference.account_code}</td>
                                 <td>{data.reference.po_number}</td>
@@ -66,6 +81,14 @@ const TableData = () => {
                                 <td>{data.form.case_info.category}</td>
                                 <td>{data.form.case_info.sub_category}</td>
                                 <td>{data.form.case_info.priority}</td>
+                                {/* <td>
+                                    <Link to={`/updatecaseform/${data.form.case_info.case_number}`}>
+                                    <button>View Details</button>
+                                    </Link>
+                                </td> */}
+                                <td>                               
+                                    <button onClick={() => sendWebhook(data.form.case_info.case_number)}>View Details</button>
+                                </td>
                             </tr>
                             })
                             }                        

@@ -12,7 +12,7 @@ app = Flask(__name__)
 CORS(app)
 
 #camunda url
-CAMUNDA_WEBHOOK_URL = "https://dsm-1.connectors.camunda.io/445520de-d59d-4bf1-be74-941375b851c3/inbound/startAPLInstance"
+CAMUNDA_WEBHOOK_URL = "https://dsm-1.connectors.camunda.io/445520de-d59d-4bf1-be74-941375b851c3/inbound/startAPLInstance1"
 
 # MongoDB connection
 client = MongoClient('mongodb://localhost:27017/',serverSelectionTimeoutMS=5000, socketTimeoutMS=5000, connectTimeoutMS=5000)
@@ -410,7 +410,20 @@ def get_case(case_number):
             return jsonify(case_details)
     else:
         return jsonify({"message":"Case not found!"}), 404
-    
+
+@app.route('/api/send_webhook', mthods=['POST'])    
+def send_webhook():
+    case_number = request.json.get('case_number')
+    if case_number:
+        try:
+            response = requests.post(CAMUNDA_WEBHOOK_URL, json={'caseId': case_number})
+            response.raise_for_status()
+            return jsonify({'success': True})
+        except requests.exceptions.RequestException as e:
+            return jsonify({'success': False, 'error': str(e)}), 500
+    else:
+        return jsonify({'success': False, 'error': 'Missing case_number'}), 400
+
 #create a api to update the case
 
 @app.route('/api/delete_cases/<booking_number>', methods=['POST'])# delete case by passing booking number
