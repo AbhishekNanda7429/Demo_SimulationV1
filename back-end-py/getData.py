@@ -413,7 +413,7 @@ def get_case(case_number):
     
 #create a api to update the case
 
-@app.route('/api/send_webhook', methods=['POST'])    
+@app.route('/api/send_webhook', mthods=['POST'])    
 def send_webhook():
     case_number = request.json.get('case_number')
     if case_number:
