@@ -23,18 +23,18 @@ const TableData = () => {
     }
   };
 
-//   const sendWebhook = async (case_number) => {
-//     try {
-//       const response = await axios.post('/api/send_webhook', { case_number });
-//       if (response.data.success) {
-//         console.log('Webhook sent successfully');
-//       } else {
-//         console.error('Error sending webhook:', response.data.error);
-//       }
-//     } catch (error) {
-//       console.error('Error sending webhook:', error);
-//     }
-//   };
+  const sendWebhook = async (case_number) => {
+    try {
+      const response = await axios.post('http://13.233.235.130:5000/api/send_webhook', { case_number });
+      if (response.data.success) {
+        console.log('Webhook sent successfully');
+      } else {
+        console.error('Error sending webhook:', response.data.error);
+      }
+    } catch (error) {
+      console.error('Error sending webhook:', error);
+    }
+  };
 
     return(
         <React.Fragment>
@@ -86,9 +86,9 @@ const TableData = () => {
                                     <button>View Details</button>
                                     </Link>
                                 </td> */}
-                                {/* <td>                               
+                                <td>                               
                                     <button onClick={() => sendWebhook(data.form.case_info.case_number)}>View Details</button>
-                                </td> */}
+                                </td>
                             </tr>
                             })
                             }                        

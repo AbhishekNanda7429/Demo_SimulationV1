@@ -411,18 +411,21 @@ def get_case(case_number):
     else:
         return jsonify({"message":"Case not found!"}), 404
 
-# @app.route('/api/send_webhook', methods=['POST'])    
-# def send_webhook():
-#     case_number = request.json.get('case_number')
-#     if case_number:
-#         try:
-#             response = requests.post(CAMUNDA_WEBHOOK_URL, json={'caseId': case_number})
-#             response.raise_for_status()
-#             return jsonify({'success': True})
-#         except requests.exceptions.RequestException as e:
-#             return jsonify({'success': False, 'error': str(e)}), 500
-#     else:
-#         return jsonify({'success': False, 'error': 'Missing case_number'}), 400
+@app.route('/api/send_webhook', methods=['POST'])    
+def send_webhook():
+    # case_number = request.json.get('case_number')
+    data = request.get_json()
+    case_number = data.get('case_number')
+    print(f'case_number' , case_number)
+    if case_number:
+        try:
+            response = requests.post(CAMUNDA_WEBHOOK_URL, json={'caseId': case_number})
+            response.raise_for_status()
+            return jsonify({'success': True})
+        except requests.exceptions.RequestException as e:
+            return jsonify({'success': False, 'error': str(e)}), 500
+    else:
+        return jsonify({'success': False, 'error': 'Missing case_number'}), 400
 
 #create a api to update the case
 
