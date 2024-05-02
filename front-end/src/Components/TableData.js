@@ -71,7 +71,6 @@ const TableData = () => {
                                     {data.form.case_info.case_number}
                                     </a>
                                 </td>
-                                <td>{data.form.case_info.case_number}</td>
                                 <td>{data.reference.booking_number}</td>
                                 <td>{data.reference.account_code}</td>
                                 <td>{data.reference.po_number}</td>
@@ -81,13 +80,8 @@ const TableData = () => {
                                 <td>{data.form.case_info.category}</td>
                                 <td>{data.form.case_info.sub_category}</td>
                                 <td>{data.form.case_info.priority}</td>
-                                {/* <td>
-                                    <Link to={`/updatecaseform/${data.form.case_info.case_number}`}>
-                                    <button>View Details</button>
-                                    </Link>
-                                </td> */}
                                 <td>                               
-                                    <button onClick={() => sendWebhook(data.form.case_info.case_number)}>View Details</button>
+                                    <button onClick={() => sendWebhook(data.form.case_info.case_number)}>Update Shipping Details</button>
                                 </td>
                             </tr>
                             })
