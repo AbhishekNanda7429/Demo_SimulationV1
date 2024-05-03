@@ -244,8 +244,8 @@ def find_and_update():
 # APIs to delete data in different DBs
 @app.route('/api/delete_booking/<booking_number>', methods=['POST'])# delete data by passing booking number in booking-details DB
 def delete_cases(booking_number):
-    delete_case = collection1.delete_many({"booking_details.booking_header.booking_number": booking_number})
-    if delete_case:
+    delete_booking = collection1.delete_many({"booking_details.booking_header.booking_number": booking_number})
+    if delete_booking:
         return jsonify({"message":" deleted successfully!!"})
     else:
         return jsonify({"message":"Case not found!"}), 404
@@ -260,8 +260,8 @@ def delete_cases(booking_number):
     
 @app.route('/api/delete_event/<carrier_bill_number>', methods=['POST'])# delete data by passing booking number in shipment-details DB
 def delete_cases(carrier_bill_number):
-    delete_case = collection5.delete_many({"shipment_events.carrier_bill_number": carrier_bill_number})
-    if delete_case:
+    delete_event = collection5.delete_many({"shipment_events.carrier_bill_number": carrier_bill_number})
+    if delete_event:
         return jsonify({"message":" deleted successfully!!"})
     else:
         return jsonify({"message":"Case not found!"}), 404
