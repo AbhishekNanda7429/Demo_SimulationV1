@@ -250,13 +250,13 @@ def delete_booking(booking_number):
     else:
         return jsonify({"message":"Case not found!"}), 404
 
-# @app.route('/api/delete_shipment/<booking_number>', methods=['POST'])# delete data by passing booking number in shipment-details DB
-# def delete_cases(booking_number):
-#     delete_case = collection2.delete_many({"shipment_details.shipment_reference.booking_number": booking_number})
-#     if delete_case:
-#         return jsonify({"message":" deleted successfully!!"})
-#     else:
-#         return jsonify({"message":"Case not found!"}), 404
+@app.route('/api/delete_shipment/<booking_number>', methods=['POST'])# delete data by passing booking number in shipment-details DB
+def delete_shipment(booking_number):
+    delete_shipment = collection2.delete_many({"shipment_details.shipment_reference.booking_number": booking_number})
+    if delete_shipment:
+        return jsonify({"message":" deleted successfully!!"})
+    else:
+        return jsonify({"message":"Case not found!"}), 404
     
 @app.route('/api/delete_event/<carrier_bill_number>', methods=['POST'])# delete data by passing booking number in shipment-details DB
 def delete_event(carrier_bill_number):
