@@ -146,19 +146,19 @@ function CaseDetailsForm({caseData}){
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Booking Number</label>
-                            <input type="text" name="booking_number" className="form-control" value={caseData.reference.booking_number} />
+                            <input type="text" name="booking_number" className="form-control" value={caseData.reference.booking_number} readOnly />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Account Code</label>
-                            <input type="text" name="account_code" className="form-control" value={caseData.reference.account_code} />
+                            <input type="text" name="account_code" className="form-control" value={caseData.reference.account_code}  readOnly />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">PO Number No</label>
-                            <input type="text" name="po_number" className="form-control" value={caseData.reference.po_number} />
+                            <input type="text" name="po_number" className="form-control" value={caseData.reference.po_number} readOnly />
                         </div>
                     </div>
                     <Sectionseparator />
@@ -167,106 +167,106 @@ function CaseDetailsForm({caseData}){
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Notes</label>
-                            <input type="text" name="notes" className="form-control" value={caseData.form.triage.notes}  />
+                            <input type="text" name="notes" className="form-control" value={caseData.form.triage.notes} readOnly />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Root Cause description</label>
-                            <input type="text" name="root_cause_description" className="form-control" value={caseData.form.triage.root_cause_description}  />
+                            <input type="text" name="root_cause_description" className="form-control" value={caseData.form.triage.root_cause_description} readOnly />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Root Cause Category</label>
-                            <input type="text" name="root_cause_category" className="form-control" value={caseData.form.triage.root_cause_category}  />
+                            <input type="text" name="root_cause_category" className="form-control" value={caseData.form.triage.root_cause_category} readOnly />
                         </div>
                     </div>
                     <h4>Case Information</h4>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Subject</label>
-                            <input type="text" name="subject" className="form-control" value={caseData.form.case_info.subject}  />
+                            <input type="text" name="subject" className="form-control" value={caseData.form.case_info.subject} readOnly />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Description</label>
-                            <input type="text" name="description" className="form-control" value={caseData.form.case_info.description}  />
+                            <input type="text" name="description" className="form-control" value={caseData.form.case_info.description} readOnly />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Case Owner</label>
-                            <input type="text" name="case_owner" className="form-control" value={caseData.form.case_info.case_owner}  />
+                            <input type="text" name="case_owner" className="form-control" value={caseData.form.case_info.case_owner} readOnly />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Category</label>
-                            <input type="text" name="category" className="form-control" value={caseData.form.case_info.category}  />
+                            <input type="text" name="category" className="form-control" value={caseData.form.case_info.category} readOnly />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Sub Category</label>
-                            <input type="text" name="sub_category" className="form-control" value={caseData.form.case_info.sub_category}  />
+                            <input type="text" name="sub_category" className="form-control" value={caseData.form.case_info.sub_category} readOnly />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Priority</label>
-                            <input type="text" name="priority" className="form-control" value={caseData.form.case_info.priority}  />
+                            <input type="text" name="priority" className="form-control" value={caseData.form.case_info.priority} readOnly  />
                         </div>
                     </div>
                     <h4>Customer Information</h4>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Account Code</label>
-                            <input type="text" name="account_code" className="form-control" value={caseData.form.customer_info.account_code}  />
+                            <input type="text" name="account_code" className="form-control" value={caseData.form.customer_info.account_code} readOnly />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Account Name</label>
-                            <input type="text" name="account_name" className="form-control" value={caseData.form.customer_info.account_name}  />
+                            <input type="text" name="account_name" className="form-control" value={caseData.form.customer_info.account_name} readOnly />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Customer Contact Name</label>
-                            <input type="text" name="customer_contact_name" className="form-control" value={caseData.form.customer_info.customer_contact_name}  />
+                            <input type="text" name="customer_contact_name" className="form-control" value={caseData.form.customer_info.customer_contact_name} readOnly />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Customer Contact Email</label>
-                            <input type="text" name="customer_contact_email" className="form-control" value={caseData.form.customer_info.customer_contact_email}  />
+                            <input type="text" name="customer_contact_email" className="form-control" value={caseData.form.customer_info.customer_contact_email} readOnly  />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Customer Contact Title</label>
-                            <input type="text" name="customer_contact_title" className="form-control" value={caseData.form.customer_info.customer_contact_title}  />
+                            <input type="text" name="customer_contact_title" className="form-control" value={caseData.form.customer_info.customer_contact_title} readOnly />
                         </div>
                     </div>
                     <h4>Case Resolution</h4>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Resolution description</label>
-                            <input type="text" name="resolution_description" className="form-control" value={caseData.form.case_resolution.resolution_description}  />
+                            <input type="text" name="resolution_description" className="form-control" value={caseData.form.case_resolution.resolution_description} readOnly />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Resolution Category</label>
-                            <input type="text" name="resolution_category" className="form-control" value={caseData.form.case_resolution.resolution_category}  />
+                            <input type="text" name="resolution_category" className="form-control" value={caseData.form.case_resolution.resolution_category} readOnly />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label className="form-lable">Case Closed</label>
-                            <input type="text" name="case_closed" className="form-control" value={caseData.form.case_resolution.case_closed}  />
+                            <input type="text" name="case_closed" className="form-control" value={caseData.form.case_resolution.case_closed} readOnly  />
                         </div>
                     </div>
                     <Sectionseparator />

@@ -4,7 +4,7 @@ import Header from './Components/Common/Header';
 import Home from './Components/Home';
 import TableData from './Components/TableData';
 import Caseform from "./Components/CaseForm";
-import UpdateCaseForm from"./Components/UpdateCaseForm";
+// import UpdateCaseForm from"./Components/UpdateCaseForm";
 
 
 function App() 
@@ -18,16 +18,7 @@ function App()
       <Routes>
       <Route path='/' element={<Home/>} /> 
       <Route path='/tabledata' element={<TableData/>} />  
-      {/* <Route path='/adduser' element={<Adduser/>} />   */}
-      {/* <Route path='/edituser/:id' element={<Edituser/>} />  */}
-      {/* <Route path='/exportcsv' element={<ExportCsv/>} />  */}
       <Route path='/caseform' element={<Caseform/>} /> 
-      {/* <Route path='/updatecaseform' element={<UpdateCaseForm/>}  />  */}
-      {/* <Route path='/addmoreinput' element={<Addmoreinput/>} />  */}
-    
-     
-          
-
       </Routes> 
           
      </div>

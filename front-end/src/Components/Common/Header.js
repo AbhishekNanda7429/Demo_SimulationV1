@@ -43,11 +43,6 @@ function Header()
                     Case List
                   </Link>
                 </li>
-                {/* <li className="nav-item">
-                  <Link to="/exportcsv" className="nav-link">
-                    Export Csv
-                  </Link>
-                </li> */}
                 <li
                   className="nav-item"
                   onClick={() => handleSectionClick('caseform')}
@@ -61,16 +56,6 @@ function Header()
                     New Case Form
                   </Link>
                 </li>
-                {/* <li className="nav-item">
-                  <Link to="/updatecaseform" className="nav-link">
-                    Update Case Form
-                  </Link>
-                </li> */}
-                {/* <li className="nav-item">
-                  <Link to="/addmoreinput" className="nav-link">
-                    Add More Input
-                  </Link>
-                </li> */}
               </ul>
             </div>
                 </div>
