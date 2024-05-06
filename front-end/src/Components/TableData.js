@@ -1,6 +1,7 @@
-import React,{ useEffect, useState } from "react";
+import React,{ useEffect, useState, useRef } from "react";
 // import { Link } from "react-router-dom";
 import axios from 'axios';
+import ReactToPrint from 'react-to-print';
 
 // Styled component for the separator
 const Sectionseparator = () => {
@@ -26,8 +27,6 @@ const Sectionseparator = () => {
       />
     );
   };
-
-
 
 const TableData = () => {
     const [data, setData] = useState([]);
@@ -130,10 +129,12 @@ const TableData = () => {
     );
 }
 
-function CaseDetailsForm({caseData}){
+const CaseDetailsForm = ({caseData}) => {
     console.log('Case Details:', caseData);
+    const componentRef = useRef();
 
     return (
+    <div ref={componentRef}>
         <div className="container">
         <div className="row">
             <div className="col-md-12">
@@ -884,20 +885,29 @@ function CaseDetailsForm({caseData}){
                     <div className="col-md-12">
                         <div className="mb-3">
                             <label className="form-lable"></label>
-                            <button className="btn btn-success btn-lg"
+                            {/* <button className="btn btn-success btn-lg"
                             // disabled={caseData.booking_number.length===0 || 
                             //         caseData.account_code.length===0 || 
                             //         caseData.po_number.length===0 ||
                             //         disable==='submitted'
                             // }
                             
-                            >Download</button>
+                            >Download</button> */}
+                                                <ReactToPrint
+                        trigger={() => <button type="button">Download as PDF</button>}
+                        content={() => componentRef.current}
+                    />
                             </div>
                     </div>
+                    {/* <ReactToPrint
+                        trigger={() => <button type="button">Download as PDF</button>}
+                        content={() => componentRef.current}
+                    /> */}
                 </div>
             </form>
             </div>
         </div>
+    </div>
     </div>
     )
 }
