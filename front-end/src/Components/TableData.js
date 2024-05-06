@@ -54,11 +54,14 @@ const TableData = () => {
       const response = await axios.post('http://13.233.235.130:5000/api/send_webhook', { case_number });
       if (response.data.success) {
         console.log('Webhook sent successfully');
+        window.alert('Data fetched successfully!');
       } else {
         console.error('Error sending webhook:', response.data.error);
+        window.alert('Error sending webhook!');
       }
     } catch (error) {
       console.error('Error sending webhook:', error);
+      window.alert('Error sending webhook!');
     }
   };
 

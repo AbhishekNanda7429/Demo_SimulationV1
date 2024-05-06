@@ -175,6 +175,7 @@ const handleInput=(e)=>{
 
 const handleSubmit=async (e)=>{
     e.preventDefault();
+    window.alert('Form submitted successfully!');
     const case_var = {
         case_number: uuidv4().substring(0,5),
         ...formValue
