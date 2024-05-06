@@ -891,7 +891,7 @@ function CaseDetailsForm({caseData}){
                             //         disable==='submitted'
                             // }
                             
-                            >Download</button>
+                            >Update</button>
                             </div>
                     </div>
                 </div>

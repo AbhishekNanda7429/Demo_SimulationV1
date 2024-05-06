@@ -1,78 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 function Header()
 {
-    const [activeSection, setActiveSection] = useState('');
-
-  const handleSectionClick = (section) => {
-    setActiveSection(section);
-  };
-
     return(
         <React.Fragment>
              <nav className="navbar">
                 <div className="container">
                 <div className="row">
-                <div className="col-md-12">
-              <h5 className="mt-0">MENU</h5>
-              <ul className="navbar-nav">
-                <li
-                  className="nav-item"
-                  onClick={() => handleSectionClick('home')}
-                >
-                  <Link
-                    to="/"
-                    className={`nav-link ${
-                      activeSection === 'home' ? 'active' : ''
-                    }`}
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li
-                  className="nav-item"
-                  onClick={() => handleSectionClick('caselist')}
-                >
-                  <Link
-                    to="/tabledata"
-                    className={`nav-link ${
-                      activeSection === 'caselist' ? 'active' : ''
-                    }`}
-                  >
-                    Case List
-                  </Link>
-                </li>
-                {/* <li className="nav-item">
-                  <Link to="/exportcsv" className="nav-link">
-                    Export Csv
-                  </Link>
-                </li> */}
-                <li
-                  className="nav-item"
-                  onClick={() => handleSectionClick('caseform')}
-                >
-                  <Link
-                    to="/caseform"
-                    className={`nav-link ${
-                      activeSection === 'caseform' ? 'active' : ''
-                    }`}
-                  >
-                    New Case Form
-                  </Link>
-                </li>
-                {/* <li className="nav-item">
-                  <Link to="/updatecaseform" className="nav-link">
-                    Update Case Form
-                  </Link>
-                </li> */}
-                {/* <li className="nav-item">
-                  <Link to="/addmoreinput" className="nav-link">
-                    Add More Input
-                  </Link>
-                </li> */}
-              </ul>
-            </div>
+                    <div className="col-md-12">
+                        <h5 className="mt-0">MENU</h5>                    
+                        <ul className="navbar-nav">
+                            <li className="nav-item"><Link to="/" className="nav-link">Home</Link></li>
+                            <li className="nav-item"><Link to="/tabledata" className="nav-link">Case List</Link></li>
+                            {/* <li className="nav-item"><Link to="/exportcsv" className="nav-link">Export Csv</Link></li> */}
+                            <li className="nav-item"><Link to="/caseform" className="nav-link">New Case Form</Link></li>
+                            {/* <li className="nav-item"><Link to="/updatecaseform" className="nav-link">Update Case Form</Link></li> */}
+                            {/* <li className="nav-item"><Link to="/addmoreinput" className="nav-link">Add More Input</Link></li> */}
+                            
+                            
+                        
+                        </ul>
+
+                    </div>
                 </div>
                 </div>
 

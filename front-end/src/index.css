@@ -12,8 +12,8 @@ code {
     monospace;
 }
 
-.leftPanel{ width: 15%; float: left; min-height: 3000px; background-color: #312E81; color: #fff;}
-.nav-link{ color: #A5B4FD; padding: 0px; font: bold;}
+.leftPanel{ width: 15%; float: left; min-height: 3000px; background-color: darkorange; color: #fff;}
+.nav-link{ color: #fff; padding: 0px; font: bold;}
 .nav-link:hover{ color: #000;}
 
 .rightPanel{ width:80%; float: left;}
@@ -38,11 +38,4 @@ code {
 
 .space {
   height: 20px; /* Adjust the height as per your requirement */
-}
-
-.active {
-  background-color: #D1D5DB; /* Or any other desired highlight color */
-  color: #FFFFFF;
-  height: 30px;
-  width: 210px;
 }
