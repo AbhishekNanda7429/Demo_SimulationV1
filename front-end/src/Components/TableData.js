@@ -35,14 +35,14 @@ const TableData = () => {
 
   useEffect(() => {
     // axios.get('http://localhost:3000/api/get_all_cases')
-    axios.get('http://13.233.235.130:5000/api/get_all_cases')
+    axios.get('http://98.70.11.75:5000/api/get_all_cases')
     .then(data => setData(data.data))
     .catch(err=> console.log(err))
   }, []);
 
   const handleCaseClick = async (caseNumber)=>{
     try{
-        const response = await axios.get(`http://13.233.235.130:5000/api/get_case/${caseNumber}`);
+        const response = await axios.get(`http://98.70.11.75:5000/api/get_case/${caseNumber}`);
         setCaseData(response.data)
     } catch(error){
         alert("Error retrieving case data");
@@ -51,7 +51,7 @@ const TableData = () => {
 
   const sendWebhook = async (case_number) => {
     try {
-      const response = await axios.post('http://13.233.235.130:5000/api/send_webhook', { case_number });
+      const response = await axios.post('http://98.70.11.75:5000/api/send_webhook', { case_number });
       if (response.data.success) {
         console.log('Webhook sent successfully');
         window.alert('Data fetched successfully!');

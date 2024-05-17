@@ -8,7 +8,7 @@
 //   useEffect(() => {
 //     const fetchCaseDetails = async () => {
 //       try {
-//         const response = await axios.get(`http://13.233.235.130:5000/api/get_case/${match.params.case_number}`);//http://13.233.235.130:5000/api/get_case/${caseNumber}
+//         const response = await axios.get(`http://98.70.11.75:5000/api/get_case/${match.params.case_number}`);//http://98.70.11.75:5000/api/get_case/${caseNumber}
 //         setCaseDetails(response.data);
 //       } catch (error) {
 //         console.error('Error fetching case details:', error);

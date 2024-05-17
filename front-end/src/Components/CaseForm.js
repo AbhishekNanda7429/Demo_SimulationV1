@@ -184,7 +184,7 @@ const handleSubmit=async (e)=>{
 };
 
 const sendToAPI = (case_var) => {
-    fetch('http://13.233.235.130:5000/api/post_case',{
+    fetch('http://98.70.11.75:5000/api/post_case',{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
