@@ -45,7 +45,7 @@ sub_category:'',
 priority:'',
 
 
-account_code:'',
+//account_code:'',
 account_name:'',
 customer_contact_name:'',
 customer_contact_email:'',
@@ -166,7 +166,7 @@ case_closed:'',
                          });
 // const [fetchedData, setFetchedData] = useState([]);
 
-const[disable]=useState('typing');
+// const[disable]=useState('typing');
 
 const handleInput=(e)=>{
     // const {name, value}= e.target;

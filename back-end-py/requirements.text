@@ -1,0 +1,8 @@
+pip install flask
+pip install pymongo
+pip install bson
+pip install uuid
+pip install cors
+pip install requests
+pip install flask_cors
+npx update-browserslist-db@latest
