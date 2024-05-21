@@ -42,7 +42,7 @@ mkdir Mock_CRM
 cd Mock_CRM
 
 # 7. Clone a Git repository
-git clone https://github.com/AbhishekNanda7429/Demo-Simulation-V1.git && success_messages+=("Git repository cloned successfully")
+git clone https://github.com/AbhishekNanda7429/Demo_SimulationV1.git && success_messages+=("Git repository cloned successfully")
 
 # 8. Checkout to a different branch
 cd Demo-Simulation-V1
