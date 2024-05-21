@@ -1,3 +1,12 @@
+#Pre-Requisite
+#----------------
+#need to check the public static IP and make code changes for it in the code
+#change the IP in postman so that we can use the APIs for posting the data into the db
+#check if the right ports are open or not in network settings
+#wget https://raw.githubusercontent.com/AbhishekNanda7429/Demo-Simulation-V1/feature/azure_V1/setup.sh run this to get the setup.sh into the VM
+#sudo chmod +x setup.sh run this to make the setup.sh file executable
+#then run the ./setup.sh 
+
 #!/bin/bash
 
 # Array to store success messages
