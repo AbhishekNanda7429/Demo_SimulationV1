@@ -45,7 +45,7 @@ cd Mock_CRM
 git clone https://github.com/AbhishekNanda7429/Demo_SimulationV1.git && success_messages+=("Git repository cloned successfully")
 
 # 8. Checkout to a different branch
-cd Demo-Simulation-V1
+cd Demo_SimulationV1
 git checkout feature/azure_V1 && success_messages+=("Checked out to azure_v1 branch successfully")
 
 # 9. Run Front-End
