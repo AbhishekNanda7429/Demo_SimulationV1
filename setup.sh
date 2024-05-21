@@ -26,8 +26,7 @@ sudo apt-get update
 sudo apt-get install -y mongodb-org
 sudo systemctl start mongod
 sudo systemctl status mongod
-sudo systemctl enable mongod 
-&& success_messages+=("MongoDB installation successful")
+sudo systemctl enable mongod && success_messages+=("MongoDB installation successful")
 
 # 6. Make a working Directory
 mkdir Mock_CRM
