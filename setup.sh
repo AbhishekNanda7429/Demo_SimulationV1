@@ -16,7 +16,7 @@ success_messages=()
 sudo apt-get update && success_messages+=("Package List Updation")
 
 # 2. Install Python3, Node.js
-sudo apt-get install -y python3 nodejs mongodb-org && success_messages+=("python3,nodejs Installation Successful")
+sudo apt-get install -y python3 nodejs && success_messages+=("python3,nodejs Installation Successful")
 
 # 3. Install npm
 sudo apt install -y npm && success_messages+=("npm Installation Successful")
