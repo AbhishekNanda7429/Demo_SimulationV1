@@ -12,7 +12,8 @@ app = Flask(__name__)
 CORS(app)
 
 #camunda url
-CAMUNDA_WEBHOOK_URL = "https://dsm-1.connectors.camunda.io/445520de-d59d-4bf1-be74-941375b851c3/inbound/startAPLInstance1"
+# CAMUNDA_WEBHOOK_URL = "https://dsm-1.connectors.camunda.io/445520de-d59d-4bf1-be74-941375b851c3/inbound/startAPLInstance1"
+CAMUNDA_WEBHOOK_URL = "https://dsm-1.connectors.camunda.io/9e5680a5-cb97-4c6c-b6be-b167f91eacf3/inbound/startAPLInstance1" #new cluster deployed by christina
 
 # MongoDB connection
 client = MongoClient('mongodb://localhost:27017/',serverSelectionTimeoutMS=5000, socketTimeoutMS=5000, connectTimeoutMS=5000)
